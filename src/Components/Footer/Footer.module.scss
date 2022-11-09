@@ -1,4 +1,9 @@
 .Footer {
     grid-area: "footer";
-    background-color: burlywood;
+    background-color: #070d1a;
+    font-size: 0.7em;
+
+    a:visited {
+        color: antiquewhite;
+    }
 }
