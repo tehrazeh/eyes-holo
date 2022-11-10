@@ -8,17 +8,18 @@ export const fetchHeroes = createAsyncThunk('hero/fetchAllHeroes', async () => {
 
 const initialState = {
     heroes: {},
-    status: 'loading' // loading, loaded, error
+    status: 'loading', // loading, loaded, error
+    link: 'https://api.opendota.com' 
 }
 
 const heroesSlice = createSlice({
     name: 'hero',
     initialState,
-    reducers: {
-        setHeroes(state, action) {
-            state.heroes = action.payload
-        }
-    },
+    // reducers: {
+    //     setHeroes(state, action) {
+    //         state.heroes = action.payload
+    //     }
+    // },
     extraReducers: (builder) => {
         builder.addCase(fetchHeroes.fulfilled, (state, action) => {
             state.heroes = action.payload
@@ -35,6 +36,6 @@ const heroesSlice = createSlice({
 })
 
 
-export const { setHeroes } = heroesSlice.actions
+// export const { setHeroes } = heroesSlice.actions
 
 export default heroesSlice.reducer

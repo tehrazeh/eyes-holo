@@ -4,8 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchHeroes } from '../../../../Redux/slices/heroesSlice'
 
 const Heroes = () => {
-  const link = 'https://api.opendota.com'
-  const {heroes, status} = useSelector((state) => state.hero)
+  const {heroes, status, link} = useSelector((state) => state.hero)
   const dispatch = useDispatch()
 
   const heroElements = []
