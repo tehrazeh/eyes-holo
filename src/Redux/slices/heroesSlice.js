@@ -3,11 +3,11 @@ import axios from 'axios';
 
 export const fetchHeroes = createAsyncThunk('hero/fetchAllHeroes', async () => {
     const response = await axios.get('https://api.opendota.com/api/constants/heroes')
-    return response.data
+    return Object.values(response.data)
 })
 
 const initialState = {
-    heroes: {},
+    heroes: [],
     status: 'loading', // loading, loaded, error
     link: 'https://api.opendota.com' 
 }
@@ -29,7 +29,7 @@ const heroesSlice = createSlice({
             state.status = 'loading'
         })
         builder.addCase(fetchHeroes.rejected, (state) => {
-            state.heroes = {}
+            state.heroes = []
             state.status = 'error'
         })
     }
