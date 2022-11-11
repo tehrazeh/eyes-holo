@@ -2,8 +2,9 @@ import './App.scss';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Main from './Components/Main/Main'
-import Items from './Components/Main/Pages/Items/Items';
-import Heroes from './Components/Main/Pages/Heroes/Heroes';
+import Items from './Components/Main/Content/Items/Items';
+import Heroes from './Components/Main/Content/Heroes/Heroes';
+import Hero from './Pages/Hero';
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Main />}/>
           <Route path="/Heroes" element={<Heroes />}/>
           <Route path="/Items" element={<Items />}/>
+          <Route path="/Hero/:id" element={<Hero />}/>
         </Routes>
       </div>
       <Footer />

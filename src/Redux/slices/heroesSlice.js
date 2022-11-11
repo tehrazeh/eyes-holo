@@ -2,8 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from 'axios';
 
 export const fetchHeroes = createAsyncThunk('hero/fetchAllHeroes', async () => {
-    const response = await axios.get('https://api.opendota.com/api/constants/heroes')
-    return Object.values(response.data)
+    const response = await axios.get('https://api.opendota.com/api/heroStats')
+    return response.data
 })
 
 const initialState = {
@@ -34,6 +34,14 @@ const heroesSlice = createSlice({
         })
     }
 })
+
+export const selectHeroByAttribute = (mainAttribute) => (state) => state.hero.heroes.filter((hero) => {
+    return hero.primary_attr === mainAttribute
+})
+
+export const selectHeroById = (heroId) => (state) => state.hero.heroes.filter((hero) => {
+   return hero.id.toString() === heroId
+   })
 
 
 // export const { setHeroes } = heroesSlice.actions
