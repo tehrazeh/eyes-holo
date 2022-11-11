@@ -9,13 +9,20 @@ const Heroes = () => {
   const dispatch = useDispatch() // for reducer callbacks
 
 
-  // const agilityHeroes = useSelector(selectHeroByAttribute('agi'))
+    // get heroes array of a certain attribute
+    const agilityHeroes = useSelector(selectHeroByAttribute('agi'))
+    const intellectHeroes = useSelector(selectHeroByAttribute('int'))
+    const strengthHeroes = useSelector(selectHeroByAttribute('str'))
 
-    const heroElements = heroes.map(hero => {
-      return <Link to={'/hero/' + hero.id} key={hero.id}><img src={link + hero.img} alt='hero icon'/></Link>
-    })
-    // const heroElementsAgility = agilityHeroes.map(hero => {
-    //   return <img key={hero.id} src={link + hero.img} alt='hero icon'/>
+    const constructHeroGroup = (heroesArray) => {
+        return heroesArray.map(hero => {
+          return <Link to={'/Heroes/' + hero.id} key={hero.id}><img src={link + hero.img} alt='hero icon'/></Link>
+        })
+    }
+
+    const heroElements = constructHeroGroup(intellectHeroes)
+    // const heroElements = heroes.map(hero => {
+    //   return <Link to={'/hero/' + hero.id} key={hero.id}><img src={link + hero.img} alt='hero icon'/></Link>
     // })
 
   useEffect(() => { // fetch heroes effect
