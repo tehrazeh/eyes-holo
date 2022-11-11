@@ -4,7 +4,6 @@ import axios from 'axios';
 // Asynch function that fetches object of all the abilities
 export const fetchItems = createAsyncThunk('hero/fetchAllitems', async () => {
     const response = await axios.get('https://api.opendota.com/api/constants/items')
-
     return Object.values(response.data) // convet to array of objects
 })
 
@@ -39,6 +38,10 @@ const itemsSlice = createSlice({
     }
 })
 
+// selector to get specific item by its id
+export const selectItemById = (itemId) => (state) => state.item.items.filter((item) => {
+    return item.id.toString() === itemId
+    })
 
 // export const { setItems } = itemsSlice.actions
 

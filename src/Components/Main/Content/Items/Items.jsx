@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchItems } from '../../../../Redux/slices/itemsSlice'
+import { Link } from 'react-router-dom'
 
  const Items = () => {
   const dispatch = useDispatch()
@@ -12,7 +13,7 @@ import { fetchItems } from '../../../../Redux/slices/itemsSlice'
   //   itemElements.push(<img key={items[item].id} src={link + items[item].img} alt='item'/>)
   // }
   const itemElements = items.map(item => {
-    return <img key={item.id} src={link + item.img} alt='item'/>
+    return <Link to={'/Items/' + item.id} key={item.id}><img src={link + item.img} alt='item'/></Link>
   })
 
   useEffect(() => {

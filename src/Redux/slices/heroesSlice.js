@@ -44,7 +44,7 @@ export const selectHeroByAttribute = (mainAttribute) => (state) => state.hero.he
     return hero.primary_attr === mainAttribute
 })
 
-// sekectir to get specific hero by its id
+// selector to get specific hero by its id
 export const selectHeroById = (heroId) => (state) => state.hero.heroes.filter((hero) => {
    return hero.id.toString() === heroId
    })

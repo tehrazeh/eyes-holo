@@ -5,6 +5,7 @@ import Main from './Components/Main/Main'
 import Items from './Components/Main/Content/Items/Items';
 import Heroes from './Components/Main/Content/Heroes/Heroes';
 import Hero from './Pages/Hero';
+import Item from './Pages/Item'
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/Heroes" element={<Heroes />}/>
           <Route path="/Items" element={<Items />}/>
           <Route path="/Heroes/:id" element={<Hero />}/>
+          <Route path="/Items/:id" element={<Item />}/>
         </Routes>
       </div>
       <Footer />
