@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchHeroes, selectHeroByAttribute } from '../../../../Redux/slices/heroesSlice'
 
 const Heroes = () => {
-  const {heroes, status, link} = useSelector((state) => state.hero) // get state from slice
+  const {status, link} = useSelector((state) => state.hero) // get state from slice
   const dispatch = useDispatch() // for reducer callbacks
 
 
