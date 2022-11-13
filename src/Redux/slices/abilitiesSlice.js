@@ -9,22 +9,17 @@ const initialState = {
 }
 
 // Asynchronous function that fetches object of all heroes' abilities
-export const fetchAllAbilities = createAsyncThunk('hero/fetchAllAbilities', async (heroNpcName) => { 
-    const allAbilities = await axios.get(`${initialState.link}/api/constants/abilities/`)
-    const heroAbilities = await axios.get(`${initialState.link}/api/constants/hero_abilities/`)
+export const fetchAllAbilities = createAsyncThunk('hero/fetchAllAbilities', async (heroNpcName) => {  // receive hero name
+    const allAbilities = await axios.get(`${initialState.link}/api/constants/abilities/`) // get object with all abilities
+    const heroAbilities = await axios.get(`${initialState.link}/api/constants/hero_abilities/`) // get hero stats with array of abilities
+    // get the list of ability names for further search
     const heroAbilityNames = heroAbilities.data[heroNpcName].abilities.filter(ability => ability !== 'generic_hidden')
-    const abilityList = []
+    const abilityList = [] // array for ability objects for our hero
      heroAbilityNames.forEach(ability => {
-        abilityList.push(allAbilities.data[ability])
+        abilityList.push(allAbilities.data[ability]) // find ability by name and get object with full info
     });
     return abilityList
 })
-
-// Async function that fetches object of heroes and their ability names
-// export const fetchAbilitiesAndTalents = createAsyncThunk('hero/fetchAbilitiesAndTalents', async () => {
-//     const response = await axios.get(`${initialState.link}/constants/hero_abilities/`)
-//     return response.data
-// })
 
 const heroesSlice = createSlice({
     name: 'ability',
@@ -46,30 +41,8 @@ const heroesSlice = createSlice({
             state.heroAbilities = []
             state.status = 'error'
         })
-
-
-        // builder.addCase(fetchAbilitiesAndTalents.fulfilled, (state, action) => { // sucess, get and save hero abilities and talents
-        //     state.abilitiesAndTalents = action.payload
-        //     state.status = 'loaded'
-        // })
-        // builder.addCase(fetchAbilitiesAndTalents.pending, (state) => { // waiting for a response
-        //     state.status = 'loading'
-        // })
-        // builder.addCase(fetchAbilitiesAndTalents.rejected, (state) => { // error TODO: redirect to error page
-        //     state.abilitiesAndTalents = {}
-        //     state.status = 'error'
-        // })
     }
 })
-
-
-// selector to get array of heroes based on the attribute
-// export const selectHeroAbilities = (heroNpcName) => (state) => {
-//     // return state.ability.abilitiesAndTalents[heroNpcName].abilities // array of ability names
-//     console.log('ability selector ' + heroNpcName)
-// }
-
-
 
 // export const { setHeroes } = heroesSlice.actions
 

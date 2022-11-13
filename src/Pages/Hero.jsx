@@ -12,19 +12,19 @@ const Hero = () => {
   const {status, heroAbilities, link } = useSelector((state) => state.ability)
   const dispatch = useDispatch() // function for our reducer callbacks
   useEffect(() => {
-    if (hero) {
+    if (hero) { // hero did load, we can fetch the abilities
       dispatch(fetchAllAbilities(hero.name))
-    } else if (!hero) {
+    } else if (!hero) { // hero did not load, we need to fetch the hero first
        dispatch(fetchHeroes())
     }
-  }, [hero, dispatch])
+  }, [hero, dispatch]) // hook dependent on hero
 
-  const abilityImages = heroAbilities.map((ability, index) => {
+  const abilityImages = heroAbilities.map((ability, index) => { // get the ability images
     return <img key={index}src={link + ability.img} alt='ability'/>
   })
 
 
-  if (statusHero === 'loading' || status === 'loading') { // loading, either page was refreshed or waiting for request  
+  if (status === 'loading' || statusHero === 'loading') { // loading, either page was refreshed or waiting for request  
     return <>Zagruzka...😎</>
   }
 
