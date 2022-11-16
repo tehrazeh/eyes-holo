@@ -12,7 +12,7 @@ export const fetchItems = createAsyncThunk('hero/fetchAllitems', async () => {
 const initialState = {
     items: {},
     itemComponents: [],
-    itemRecipe: {},
+    itemRecipe: null,
     status: 'loading', // loading, loaded, error
     link: 'https://api.opendota.com'
 }
@@ -27,15 +27,20 @@ const itemsSlice = createSlice({
             if (action.payload.componentNames !== null) { // item has components
                 action.payload.componentNames.forEach(component => componentElements.push(state.items[component]))
                 
+                // get the cost of components to determine if the item has recipe
                 const componentCosts = componentElements.reduce((sum, component) => {
                     return sum + component.cost
                 }, 0)
+
+                // if sum of components less than item cost, then we add a recipe
                 if (componentCosts < action.payload.itemCost) {
                     state.itemRecipe = {
                         name: action.payload.itemName + " Recipe",
                         cost: action.payload.itemCost - componentCosts,
                         img: "/apps/dota2/images/dota_react/items/recipe.png"
                     }
+                } else { // no recipe for the current item, delete last entry
+                    state.itemRecipe = null
                 }
                 state.itemComponents = componentElements
             } else { // item has no components, reset the array
