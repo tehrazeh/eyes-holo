@@ -19,14 +19,14 @@ const initialState = {
 const itemsSlice = createSlice({
     name: 'item',
     initialState,
-    reducers: {
+    reducers: { // get and save components of selected item
         setComponents(state, action) {
             const componentElements = []
-            if (action.payload !== null) {
+            if (action.payload !== null) { // item has components
                 action.payload.forEach(component => componentElements.push(state.items[component]))
                 state.itemComponents = componentElements
-            } else {
-                state.itemComponents = []
+            } else { // item has no components, reset the array
+                state.itemComponents = [] 
             }          
         }
     },
@@ -45,11 +45,11 @@ const itemsSlice = createSlice({
     }
 })
 
-
+// selector to get the item by id
 export const selectItemById = (itemId) => (state) => {
-    const asArray = Object.entries(state.item.items)
-    const selectedItem = asArray.filter(([key, value]) => value.id.toString() === itemId)
-    return Object.fromEntries(selectedItem)
+    const asArray = Object.entries(state.item.items) // change objects of items to array of objects
+    const selectedItem = asArray.filter(([key, value]) => value.id.toString() === itemId) // get the selected item
+    return Object.fromEntries(selectedItem) // create object for selected item and return it
     // return Object.fromEntries(Object.entries(items).filter(([key, value]) => value.id === itemId))
 }
 
