@@ -20,7 +20,7 @@ const Hero = () => {
   }, [hero, dispatch]) // hook dependent on hero
 
   const abilityImages = heroAbilities.map((ability, index) => { // get the ability images
-    return <img key={index}src={link + ability.img} alt='ability'/>
+    return <img key={index} src={link + ability.img} alt='ability'/>
   })
 
 

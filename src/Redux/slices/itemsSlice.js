@@ -12,6 +12,7 @@ export const fetchItems = createAsyncThunk('hero/fetchAllitems', async () => {
 const initialState = {
     items: {},
     itemComponents: [],
+    itemRecipe: {},
     status: 'loading', // loading, loaded, error
     link: 'https://api.opendota.com'
 }
@@ -21,13 +22,27 @@ const itemsSlice = createSlice({
     initialState,
     reducers: { // get and save components of selected item
         setComponents(state, action) {
-            const componentElements = []
-            if (action.payload !== null) { // item has components
-                action.payload.forEach(component => componentElements.push(state.items[component]))
+            const componentElements = [] // TODO! refactor to not use this variable and change the state
+
+            if (action.payload.componentNames !== null) { // item has components
+                action.payload.componentNames.forEach(component => componentElements.push(state.items[component]))
+                
+                const componentCosts = componentElements.reduce((sum, component) => {
+                    return sum + component.cost
+                }, 0)
+                if (componentCosts < action.payload.itemCost) {
+                    state.itemRecipe = {
+                        name: action.payload.itemName + " Recipe",
+                        cost: action.payload.itemCost - componentCosts,
+                        img: "/apps/dota2/images/dota_react/items/recipe.png"
+                    }
+                }
                 state.itemComponents = componentElements
             } else { // item has no components, reset the array
                 state.itemComponents = [] 
-            }          
+            }
+            
+            
         }
     },
     extraReducers: (builder) => {
@@ -44,6 +59,7 @@ const itemsSlice = createSlice({
         })
     }
 })
+
 
 // selector to get the item by id
 export const selectItemById = (itemId) => (state) => {
