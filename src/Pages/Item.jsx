@@ -16,8 +16,8 @@ const Hero = () => {
   const itemKey = Object.keys(item)[0] // key of the item (overwhelming_blink)
   const itemAttributes = item[itemKey] // object of item attributes: img, full name etc.
 
-  const componentElements = components.map(component => { // array of component images
-    return <div key={component.id}><p>{component.cost}</p>
+  const componentElements = components.map((component, index) => { // array of component images
+    return <div key={index}><p>{component.cost}</p>
       <Link to={'/Items/' + component.id} >
         <img src={link + component.img} alt='component'></img>
       </Link>
