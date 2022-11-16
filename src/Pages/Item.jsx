@@ -24,8 +24,6 @@ const Hero = () => {
     </div>
   })
 
-
-
   useEffect(() => {
     if (itemAttributes) { // item attributes loaded, get the components
       dispatch(setComponents({ componentNames: itemAttributes.components, itemCost: itemAttributes.cost, itemName: itemAttributes.dname }))
