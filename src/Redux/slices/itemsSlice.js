@@ -11,6 +11,7 @@ export const fetchItems = createAsyncThunk('hero/fetchAllitems', async () => {
 // initial state of this slice
 const initialState = {
     items: {},
+    itemComponents: [],
     status: 'loading', // loading, loaded, error
     link: 'https://api.opendota.com'
 }
@@ -18,11 +19,17 @@ const initialState = {
 const itemsSlice = createSlice({
     name: 'item',
     initialState,
-    // reducers: {
-    //     setItems(state, action) {
-    //         state.items = action.payload
-    //     }
-    // },
+    reducers: {
+        setComponents(state, action) {
+            const componentElements = []
+            if (action.payload !== null) {
+                action.payload.forEach(component => componentElements.push(state.items[component]))
+                state.itemComponents = componentElements
+            } else {
+                state.itemComponents = []
+            }          
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchItems.fulfilled, (state, action) => { // sucess, get and save abilities to redux
             state.items = action.payload
@@ -38,10 +45,6 @@ const itemsSlice = createSlice({
     }
 })
 
-// selector to get specific item by its id
-// export const selectItemById = (itemId) => (state) => state.item.items.filter((item) => {
-//     return item.id.toString() === itemId
-//     })
 
 export const selectItemById = (itemId) => (state) => {
     const asArray = Object.entries(state.item.items)
@@ -50,6 +53,6 @@ export const selectItemById = (itemId) => (state) => {
     // return Object.fromEntries(Object.entries(items).filter(([key, value]) => value.id === itemId))
 }
 
-// export const { setItems } = itemsSlice.actions
+export const { setComponents } = itemsSlice.actions
 
 export default itemsSlice.reducer
