@@ -1,5 +1,68 @@
-.heroImage {
-    width: 50px;
-    border-radius: 5px;
-    padding: 0 2px;
+
+.heroSection {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 95%;
 }
+
+.heroesBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.attributeBlock {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    img {
+        width: 20px;
+        margin-right: 4px;
+    }
+}
+
+.heroBlock {
+    flex-grow: 1;
+    border-radius: 3px;
+    margin: 4px;
+    width: 60px;
+    max-width: 80px;
+    overflow: hidden;
+    position: relative;
+    &_image {        
+        width: 100%;   
+        vertical-align: middle;
+        border-radius: 3px;
+    }
+
+    &_title {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(33, 33, 33, 0.6);
+        text-decoration: none;
+        font-size: 0.5em;
+        color:aliceblue;
+        opacity: 0;
+    }
+
+    &:hover {
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+        filter: brightness(1.2);
+        transform: scale(1.2);        
+    }
+    &:hover &_title{
+        opacity: 1;
+    }
+
+    
+}
+
+

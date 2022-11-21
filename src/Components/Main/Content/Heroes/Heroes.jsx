@@ -1,9 +1,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchHeroes, selectHeroByAttribute } from '../../../../Redux/slices/heroesSlice'
 import HeroBlockByAttribute from './attributeBlocks/HeroBlockByAttribute'
+import styles from './Heroes.module.scss'
 
 const Heroes = () => {
   const {status, link} = useSelector((state) => state.hero) // get state from slice
@@ -13,7 +13,7 @@ const Heroes = () => {
 
   // render block of heroes for each attributes
   const heroBlocks = attributes.map(attribute => {
-      return <HeroBlockByAttribute attribute={attribute} link={link} />
+      return <HeroBlockByAttribute attribute={attribute} link={link} key={attribute}/>
     })
 
 
@@ -25,8 +25,8 @@ const Heroes = () => {
     return <>Zagruzka...😎</>
   }
   return (
-    <div>
-      <div>{heroBlocks}</div>
+    <div className={styles.heroBlocks}>
+      {heroBlocks}
     </div>
   )
 }
