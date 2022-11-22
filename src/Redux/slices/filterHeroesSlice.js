@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-    searchValue: ''
+    searchValue: '' // text from input
 }
 
 const filterHeroseSlice = createSlice({
