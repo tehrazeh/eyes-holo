@@ -25,7 +25,9 @@ const HeroBlockByAttribute = (props) => {
                     hero.localized_name.toLowerCase().includes(searchValue) ? 
                     styles.heroBlock_image_active : styles.heroBlock_image_notActive
                     } src={props.link + hero.img} alt='hero icon' />
-                <p className={styles.heroBlock_title}>{hero.localized_name}</p>
+                <p className={
+                    hero.localized_name.toLowerCase().includes(searchValue) ? 
+                    styles.heroBlock_title : styles.heroBlock_title_inactive}>{hero.localized_name}</p>
             </Link>
             </div>
         )
