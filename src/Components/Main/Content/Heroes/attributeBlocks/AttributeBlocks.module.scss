@@ -24,6 +24,13 @@
         width: 20px;
         margin-right: 4px;
     }
+
+    span {
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        color: rgb(190, 193, 221);
+    }
 }
 
 .heroBlock {
@@ -48,7 +55,9 @@
         background-color: rgba(33, 33, 33, 0.6);
         text-decoration: none;
         font-size: 0.5em;
+        letter-spacing: 0.05em;
         color:aliceblue;
+        font-weight: lighter;
         opacity: 0;
     }
 
