@@ -41,10 +41,14 @@
     max-width: 80px;
     overflow: hidden;
     position: relative;
-    &_image {        
+    &_image_active, &_image_notActive {        
         width: 100%;   
         vertical-align: middle;
         border-radius: 3px;
+
+    }
+    &_image_notActive{
+        opacity: 0.2;
     }
 
     &_title {

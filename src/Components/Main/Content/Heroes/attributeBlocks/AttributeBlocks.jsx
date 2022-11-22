@@ -7,6 +7,7 @@ const HeroBlockByAttribute = (props) => {
 
     // get the array of heroes for specified attribute
     const heroes = useSelector(selectHeroByAttribute(props.attribute))
+    const searchValue = useSelector((state) => state.filterHero.searchValue)
 
     // since the attribute does not have full name
     const [attributeFullName] = React.useState ({
@@ -20,12 +21,16 @@ const HeroBlockByAttribute = (props) => {
         return ( 
             <div className={styles.heroBlock} key={hero.id}>    
             <Link to={'/Heroes/' + hero.id} >
-                <img className={styles.heroBlock_image} src={props.link + hero.img} alt='hero icon' />
+                <img className={
+                    hero.localized_name.toLowerCase().includes(searchValue) ? 
+                    styles.heroBlock_image_active : styles.heroBlock_image_notActive
+                    } src={props.link + hero.img} alt='hero icon' />
                 <p className={styles.heroBlock_title}>{hero.localized_name}</p>
             </Link>
             </div>
         )
     })
+
 
     // return a jsx layout of block of heroes and image of attribute
     return (

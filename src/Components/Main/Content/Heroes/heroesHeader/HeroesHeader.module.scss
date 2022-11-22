@@ -6,7 +6,7 @@
         display: inline-block;
         input {
             outline: none;
-            border: 1px solid rgb(190, 193, 221);
+            border: 1px solid rgb(134, 136, 158);
             border-radius: 8px;
             font-size: 12px;
             padding: 10px 18px;
@@ -15,6 +15,7 @@
             color: rgb(190, 193, 221);
             
             &:focus {
+                border: 1px solid rgb(190, 193, 221);
                 background-color: #151a33;
             }
         }
