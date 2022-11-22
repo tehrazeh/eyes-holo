@@ -2,15 +2,17 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchHeroes } from '../../../../Redux/slices/heroesSlice'
+import { setSearchValue, clearSearchValue } from '../../../../Redux/slices/filterHeroesSlice'
 import HeroBlockByAttribute from './attributeBlocks/HeroBlockByAttribute'
 import styles from './Heroes.module.scss'
 
 const Heroes = () => {
   const {status, link} = useSelector((state) => state.hero) // get state from slice
+  const searchValue = useSelector((state) => state.filterHero.searchValue)
   const dispatch = useDispatch() // for reducer callbacks
   const [attributes] = useState(['str', 'agi', 'int']) // attributes of heroes
 
-  const [searchValue, setSearchValue] = useState('')
+  // const [searchValue, setSearchValue] = useState('')
 
   // render block of heroes for each attributes
   const heroBlocks = attributes.map(attribute => {
@@ -33,11 +35,11 @@ const Heroes = () => {
           alt='search' />
           <input 
             value={searchValue}
-            onChange={(event) => setSearchValue(event.target.value)}
+            onChange={(event) => dispatch(setSearchValue(event.target.value))}
           placeholder="Search Hero..."/>
           {searchValue && 
           <img className={styles.clearIcon} src={require(`../../../../Assets/Input/clear.png`)}
-          alt='clear'  onClick={() => setSearchValue('')}/>}
+          alt='clear'  onClick={() => dispatch(clearSearchValue())}/>}
         </div>      
         {/* <span>all heroes</span> */}
       </div>
