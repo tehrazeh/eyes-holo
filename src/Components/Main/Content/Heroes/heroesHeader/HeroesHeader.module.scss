@@ -1,5 +1,9 @@
 .header{
+    width: 95%;
     line-height: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     &_inputContainer{
         position: relative;
@@ -40,6 +44,47 @@
                 cursor: pointer;
             }
         }
+    }
+
+    &_rolesContainer {
+        border: 1px solid rgb(134, 136, 158);
+        border-radius: 4px;
+        padding: 2px;
+        background: none;
+        &_activeButton, &_inactiveButton {
+            margin: 2px;
+            padding: 2px;
+            border-radius: 3px;
+            border: none;
+            transition: .2s ease-in-out 0s;          
+            :hover {
+                filter: brightness(1.8);
+                transform: scale(1.1);
+                cursor: pointer;
+            } 
+
+            img {
+                display: block;
+                width: 25px;
+            }
+        }
+
+        &_activeButton {
+            background-color: #1a2244;
+            filter: brightness(1.2); 
+            img {
+                opacity: 0.8;
+            }
+        }
+
+        &_inactiveButton {
+            background-color: #070d1a;
+
+            img {
+               opacity: 0.2;
+            }
+        }
+        
     }
     
     ::placeholder {

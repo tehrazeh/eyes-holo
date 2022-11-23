@@ -14,10 +14,6 @@ const Items = () => {
       <img src={link + items[item].img} alt='item' />
     </Link>)
   }
-  // const itemElements = items.map(item => {
-  //   return <Link to={'/Items/' + item.id} key={item.id}><img src={link + item.img} alt='item'/></Link>
-  // })
-
 
   useEffect(() => {
     dispatch(fetchItems())

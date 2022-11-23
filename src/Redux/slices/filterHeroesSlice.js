@@ -2,7 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-    searchValue: '' // text from input
+    searchValue: '', // text from input
+    rolesFilter: {
+        'Carry': false,
+        'Support': false
+    }
 }
 
 const filterHeroseSlice = createSlice({
@@ -14,10 +18,14 @@ const filterHeroseSlice = createSlice({
         },
         clearSearchValue(state) {
             state.searchValue = ''
+            // console.log(!state.rolesFilter['carry'])
+        }, 
+        setRoleFilter(state, action) {
+            state.rolesFilter[action.payload] = !state.rolesFilter[action.payload]
         } 
     }
 })
 
-export const {setSearchValue, clearSearchValue} = filterHeroseSlice.actions
+export const {setSearchValue, clearSearchValue, setRoleFilter} = filterHeroseSlice.actions
 
 export default filterHeroseSlice.reducer
