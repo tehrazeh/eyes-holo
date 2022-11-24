@@ -2,18 +2,17 @@
     width: 95%;
     line-height: 0px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-
     &_inputContainer{
         position: relative;
         display: inline-block;
         input {
             outline: none;
             border: 1px solid rgb(134, 136, 158);
-            border-radius: 8px;
-            font-size: 12px;
-            padding: 10px 18px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 14px 20px;
             padding-left: 35px;
             background-color: #101529;
             color: rgb(190, 193, 221);
@@ -27,17 +26,17 @@
         .searchIcon {
             position: absolute;
             left: 10px;
-            top: 10px;
-            width: 16px;
+            top: 15px;
+            width: 20px;
             opacity: 0.6;
         }
 
         .clearIcon {
             position: absolute;
-            top: 10px;
+            top: 15px;
             right: 10px;
             opacity: 0.5;
-            width: 16px;
+            width: 20px;
 
             &:hover {
                 opacity: 0.9;
@@ -48,8 +47,8 @@
 
     &_rolesContainer {
         border: 1px solid rgb(134, 136, 158);
-        border-radius: 4px;
-        padding: 2px;
+        border-radius: 5px;
+        padding: 1px;
         background: none;
         &_activeButton, &_inactiveButton {
             margin: 2px;
@@ -65,7 +64,7 @@
 
             img {
                 display: block;
-                width: 25px;
+                width: 35px;
             }
         }
 
