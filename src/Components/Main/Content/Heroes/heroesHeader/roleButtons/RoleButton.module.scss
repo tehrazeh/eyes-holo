@@ -1,0 +1,82 @@
+.role {
+    position: relative;
+    padding: 0px;
+    &_tooltip {
+        z-index: 1;
+        position: absolute;
+        left: 50%;
+        bottom: -.25rem;
+        transform: translateX(-50%) translateY(125%);
+        background-color: rgb(27, 29, 47);
+        border-radius: 5px;
+        padding: 10px;
+        display: none;
+        line-height: 1.5em;
+        width: 580%;
+        height: 250%;
+        // max-width: 500%;
+        color: rgb(213, 217, 255);
+        span {
+            text-align: left;
+            font-size: 0.8em;
+            color: rgb(169, 172, 201);
+        }
+        
+    }
+
+    &_tooltip::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 100%;
+        transform: translateX(-50%);
+        border: 15px solid;
+        border-color: #0000 #0000 #181f3d #0000;
+    }
+
+    &_activeButton, &_inactiveButton {
+        position: relative;
+        margin: 2px;
+        padding: 2px;
+        border-radius: 3px;
+        border: none;
+        transition: .2s ease-in-out 0s;          
+        &:hover {
+            img {
+                filter: brightness(1.8);
+                transform: scale(1.1);
+            }
+            
+            cursor: pointer;
+        } 
+
+        img {
+            display: block;
+            width: 35px;
+        }
+    }
+
+    &_activeButton {
+        background-color: #1a2244;
+        filter: brightness(1.2); 
+        img {
+            opacity: 0.8;
+        }
+    }
+
+    &_inactiveButton {
+        background-color: #070d1a;
+
+        img {
+           opacity: 0.2;
+        }
+    }
+    
+    &:hover &_tooltip{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: #181f3d;
+    }
+}

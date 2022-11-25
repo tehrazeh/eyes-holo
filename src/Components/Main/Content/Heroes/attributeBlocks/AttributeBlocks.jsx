@@ -11,7 +11,7 @@ const HeroBlockByAttribute = (props) => {
 
     const currentFilter = []
     for (let role in rolesFilter) { // get current filters of roles
-        if (rolesFilter[role]) {
+        if (rolesFilter[role].isActive) {
             currentFilter.push(role)
         }
     }

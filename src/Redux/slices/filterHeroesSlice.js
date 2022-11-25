@@ -4,8 +4,20 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     searchValue: '', // text from input
     rolesFilter: {
-        'Carry': false,
-        'Support': false
+        'Carry': {
+            isActive: false,
+            description: 
+            `Will become more useful later in the game if they
+            gain a significant gold advantage.`
+
+        },
+        'Support': {
+            isActive:false,
+            description: 
+            `Can focus less on amassing gold and items,
+            and more on using their abilities to gain
+            an advantage for the team.`
+        }
     }
 }
 
@@ -18,10 +30,9 @@ const filterHeroseSlice = createSlice({
         },
         clearSearchValue(state) {
             state.searchValue = ''
-            // console.log(!state.rolesFilter['carry'])
         }, 
         setRoleFilter(state, action) {
-            state.rolesFilter[action.payload] = !state.rolesFilter[action.payload]
+            state.rolesFilter[action.payload].isActive = !state.rolesFilter[action.payload].isActive
         } 
     }
 })
