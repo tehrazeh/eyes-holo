@@ -4,7 +4,7 @@ import axios from 'axios';
 // initial state when the app loads
 const initialState = {
     heroAbilities: [],
-    status: 'loading', // loading, loaded, error
+    statusAbilities: 'loading', // loading, loaded, error
     link: 'https://api.opendota.com' 
 }
 
@@ -32,14 +32,14 @@ const heroesSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(fetchAllAbilities.fulfilled, (state, action) => { // sucess, get and save all abilities
             state.heroAbilities = action.payload
-            state.status = 'loaded'
+            state.statusAbilities = 'loaded'
         })
         builder.addCase(fetchAllAbilities.pending, (state) => { // waiting for a response
-            state.status = 'loading'
+            state.statusAbilities = 'loading'
         })
         builder.addCase(fetchAllAbilities.rejected, (state) => { // error TODO: redirect to error page
             state.heroAbilities = []
-            state.status = 'error'
+            state.statusAbilities = 'error'
         })
     }
 })

@@ -11,7 +11,6 @@ const Heroes = () => {
   const dispatch = useDispatch() // for reducer callbacks
   const [attributes] = useState(['str', 'agi', 'int']) // attributes of heroes
 
-  // const [searchValue, setSearchValue] = useState('')
 
   // render block of heroes for each attributes
   const heroBlocks = attributes.map(attribute => {
@@ -20,8 +19,11 @@ const Heroes = () => {
 
 
   useEffect(() => { // fetch heroes effect
+    if (status !== 'loaded') { // to fetch heroes only if the filter state is empty
       dispatch(fetchHeroes())
-  }, [dispatch])
+    }
+      
+  }, [dispatch, status])
 
   if (status === 'loading') { // waiting for a response, or page was refreshed
     return <>Zagruzka...😎</>

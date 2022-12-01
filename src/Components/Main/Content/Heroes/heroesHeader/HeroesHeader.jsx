@@ -7,10 +7,9 @@ const HeroesHeader = () => {
   const dispatch = useDispatch()
   const { rolesFilter, searchValue } = useSelector((state) => state.filterHero)
 
-  const roleButtons = []
+  const roleButtons = [] // create array of role button components
 
-  for (let role in rolesFilter) {
-    // roleButtons.push(rolesFilter[role])
+  for (let role in rolesFilter) { // populate array of role button components
     roleButtons.push(<RoleButton key={role} role={role} roleData={rolesFilter[role]}/>)
   }
 

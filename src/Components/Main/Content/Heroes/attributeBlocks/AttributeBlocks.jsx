@@ -1,4 +1,5 @@
 import React from 'react'
+import { attributeFullName } from '../../../../../constants'
 import { useSelector } from 'react-redux'
 import { selectHeroByAttribute } from '../../../../../Redux/slices/heroesSlice'
 import { Link } from 'react-router-dom'
@@ -16,12 +17,7 @@ const HeroBlockByAttribute = (props) => {
         }
     }
 
-    // since the attribute does not have full name
-    const [attributeFullName] = React.useState ({
-        'str' : 'strength',
-        'agi' : 'agility',
-        'int' : 'intellect'
-    })
+
 
     // construct block of links of hero images
     const constructHeroBlock = heroes.map(hero => {

@@ -1,0 +1,129 @@
+img {
+    vertical-align: middle;
+}
+
+.abilities {
+    background-color: rgb(102, 61, 26);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.role {
+    background-color: rgb(28, 11, 46);
+    border-radius: 8px;
+    padding: 2px 4px;
+    margin: 5px;
+}
+
+.Container {
+    margin: 0 auto;
+    width: 95%;
+}
+
+.header {
+    background-color: brown;
+}
+
+.hero_overview{
+    display: grid;
+    padding: 20px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "description stats"
+    "lore stats";
+    grid-gap: 10px;
+    background-color: goldenrod;
+
+    &_description {
+        grid-area: description;
+        display: flex;
+        border-radius: 5px;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: cadetblue;
+        line-height: 3em;
+
+        & * {
+            margin: 0 10px;
+        }
+        div {
+            background-color: rgb(54, 79, 71);
+        }
+        img {
+            border-radius: 5px;
+            // height: 150px;
+        }
+    }
+
+    &_stats {
+        grid-area: stats;
+        border-radius: 5px;
+        background-color: rgb(39, 25, 53);
+    }
+
+    &_lore {
+        grid-area: lore;
+        border-radius: 5px;
+        line-height: 2em;
+        background-color: rgb(27, 53, 25);
+    }
+}
+
+.abilityBlock {
+    background-color: rosybrown;
+    margin: 10px 0;
+    display: flex;
+    width: 33%;
+    flex-direction: column;
+    padding: 10px;
+
+    img {
+        border-radius: 5px;
+    }
+
+    &_top {
+        padding: 5px;
+        background-color: rgb(111, 84, 15);
+        display: flex;
+        justify-content: space-evenly;
+
+        &_stats {
+            background-color: rgb(66, 49, 8);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        &_dmg {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            background-color: rgb(15, 29, 25);
+        }
+    }
+
+    &_bottom {
+        padding: 2px;
+        background-color: rgb(26, 35, 63);
+        display: flex;
+
+        & > :first-child {
+            width: 65%;
+        }
+
+        & > :last-child {
+            width: 35%;
+        }
+
+        div {
+            margin: 5px;
+            font-weight: 200;
+            line-height: 1.8em;
+            background-color: rgb(50, 51, 21);
+        }
+    }
+}
