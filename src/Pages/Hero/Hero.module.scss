@@ -2,37 +2,6 @@ img {
     vertical-align: middle;
 }
 
-.abilities {
-    background-color: rgb(102, 61, 26);
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-
-    p {
-        font-size: 1.2em !important;
-        font-weight: 500 !important;
-    }
-}
-
-.str {
-    color: red
-}
-
-.agi {
-    color: greenyellow;
-}
-
-.int {
-    color: rgb(60, 172, 241)
-}
-
-.role {
-    background-color: rgb(28, 11, 46);
-    border-radius: 8px;
-    padding: 2px 4px;
-    margin: 5px;
-}
-
 .Container {
     margin: 0 auto;
     width: 95%;
@@ -47,137 +16,14 @@ img {
     background-color: brown;
 }
 
-.attributeImg {
-    width: 30px;
-    opacity: 0.8;
-}
-
-.activeAttribute {
-    width: 40px;
-    filter:brightness(1.5)
-}
-
 .hero_overview{
     display: grid;
     padding: 20px;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0.5fr 1.5fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
     "description stats"
     "lore stats";
     grid-gap: 10px;
     background-color: goldenrod;
-
-    &_profile {
-        grid-area: description;
-        display: flex;
-        border-radius: 5px;
-        justify-content: space-evenly;
-        align-items: center;
-        background-color: cadetblue;
-        line-height: 3em;
-
-        & * {
-            margin: 0 10px;
-        }
-        div {
-            background-color: rgb(54, 79, 71);
-        }
-        img {
-            border-radius: 5px;
-            // height: 150px;
-        }
-    }
-
-    &_stats {
-        grid-area: stats;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        border-radius: 5px;
-        background-color: rgb(39, 25, 53);
-
-        .statsBlock {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            width: 90%;
-            margin: 15px;
-
-            div {
-                width: 100%;
-                padding: 5px;
-                margin: 5px 0;
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
-                background-color: rgb(10, 27, 17);
-            }
-        }
-    }
-
-    &_lore {
-        grid-area: lore;
-        border-radius: 5px;
-        line-height: 2em;
-        background-color: rgb(27, 53, 25);
-    }
-}
-
-.abilityBlock {
-    background-color: rosybrown;
-    margin: 10px 0;
-    display: flex;
-    width: 33%;
-    flex-direction: column;
-    padding: 10px;
-
-    img {
-        border-radius: 5px;
-    }
-
-    &_top {
-        padding: 5px;
-        background-color: rgb(111, 84, 15);
-        display: flex;
-        justify-content: space-evenly;
-
-        &_stats {
-            background-color: rgb(66, 49, 8);
-            min-height: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-
-        }
-
-        &_dmg {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            background-color: rgb(15, 29, 25);
-        }
-    }
-
-    &_bottom {
-        padding: 2px;
-        background-color: rgb(26, 35, 63);
-        display: flex;
-
-        & > :first-child, & > :last-child {
-            width: 50%;
-        }
-
-
-
-        div {
-            margin: 5px;
-            font-weight: 200;
-            line-height: 1.8em;
-            background-color: rgb(50, 51, 21);
-        }
-    }
 }

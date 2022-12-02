@@ -31,7 +31,6 @@ const Hero = () => {
         <Link to='/Heroes'>Heroes </Link>{' > '}
         <img src={link + hero.icon} alt='hero icon' />
       </div>
-      {/* OVERVIEW */}
       <div className={styles.hero_overview}>
         <Profile hero={hero}/>
         <Stats hero={hero}/>

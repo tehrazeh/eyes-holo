@@ -1,7 +1,7 @@
 export const attributeFullName = {
-    'str' : 'strength',
-    'agi' : 'agility',
-    'int' : 'intellect'
+    'str' : 'Strength',
+    'agi' : 'Agility',
+    'int' : 'Intellect'
 }
 
 export const link = 'https://api.opendota.com' 

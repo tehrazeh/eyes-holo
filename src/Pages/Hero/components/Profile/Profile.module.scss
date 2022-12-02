@@ -1,0 +1,40 @@
+.str {
+    color: rgb(238, 70, 9)
+}
+
+.agi {
+    color: rgb(60, 195, 22);
+}
+
+.int {
+    color: rgb(60, 172, 241)
+}
+
+.profile {
+    grid-area: description;
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: cadetblue;
+    line-height: 3em;
+    padding: 10px;
+
+    & * {
+        margin: 0 10px;
+    }
+    div {
+        background-color: rgb(54, 79, 71);
+    }
+    img {
+        border-radius: 5px;
+        // height: 150px;
+    }
+
+    .role {
+        background-color: rgb(28, 11, 46);
+        border-radius: 8px;
+        padding: 2px 4px;
+        margin: 5px;
+    }
+}

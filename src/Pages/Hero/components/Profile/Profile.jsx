@@ -1,4 +1,4 @@
-import styles from '../../Hero.module.scss'
+import styles from './Profile.module.scss'
 import { link, attributeFullName } from '../../../../utils/constants'
 
 const Profile = (props) => {
@@ -7,7 +7,7 @@ const Profile = (props) => {
         return <span key={index} className={styles.role}>{role}</span>
       })
     return (
-        <div className={styles.hero_overview_profile}>
+        <div className={styles.profile}>
             <img src={link + hero?.img} alt='hero' />
             <div>
                 <h2>{hero.localized_name}</h2>

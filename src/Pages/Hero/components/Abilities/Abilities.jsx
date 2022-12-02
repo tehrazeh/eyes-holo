@@ -1,4 +1,4 @@
-import styles from '../../Hero.module.scss'
+import styles from './Abilities.module.scss'
 import { link } from '../../../../utils/constants'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'

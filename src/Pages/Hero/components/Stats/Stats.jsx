@@ -1,4 +1,4 @@
-import styles from '../../Hero.module.scss'
+import styles from './Stats.module.scss'
 import { useMemo } from 'react'
 import { attributeFullName } from '../../../../utils/constants'
 const Stats = (props) => {
@@ -15,10 +15,10 @@ const Stats = (props) => {
                 </div>
             )
         }
-        return <div>{result}</div>
+        return result
     }, [hero])
     return (
-        <div className={styles.hero_overview_stats}>
+        <div className={styles.stats}>
             <div className={styles.statsBlock}>
                 <h2>Attack</h2>
                 <div>

@@ -1,0 +1,9 @@
+.lore {
+    grid-area: lore;
+    border-radius: 5px;
+    line-height: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(27, 53, 25);
+}

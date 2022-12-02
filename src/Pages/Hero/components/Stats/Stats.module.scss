@@ -1,0 +1,38 @@
+.attributeImg {
+    width: 30px;
+    opacity: 0.8;
+}
+
+.activeAttribute {
+    width: 40px;
+    filter:brightness(1.5)
+}
+
+.stats {
+    grid-area: stats;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(39, 25, 53);
+
+    .statsBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 90%;
+        margin: 15px;
+
+        div {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: rgb(10, 27, 17);
+        }
+    }
+}
