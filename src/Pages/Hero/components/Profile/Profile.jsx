@@ -1,5 +1,5 @@
 import styles from '../../Hero.module.scss'
-import { link, attributeFullName } from '../../../../constants'
+import { link, attributeFullName } from '../../../../utils/constants'
 
 const Profile = (props) => {
     const hero = props.hero

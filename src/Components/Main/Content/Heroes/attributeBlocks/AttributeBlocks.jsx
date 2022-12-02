@@ -1,5 +1,5 @@
 import React from 'react'
-import { attributeFullName } from '../../../../../constants'
+import { attributeFullName } from '../../../../../utils/constants'
 import { useSelector } from 'react-redux'
 import { selectHeroByAttribute } from '../../../../../Redux/slices/heroesSlice'
 import { Link } from 'react-router-dom'

@@ -1,5 +1,5 @@
 import styles from '../../Hero.module.scss'
-import { attributeFullName } from '../../../../constants'
+import { attributeFullName } from '../../../../utils/constants'
 const Stats = (props) => {
     const hero = props.hero
     let heroAttributes = []
