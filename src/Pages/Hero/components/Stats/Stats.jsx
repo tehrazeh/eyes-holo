@@ -1,18 +1,22 @@
 import styles from '../../Hero.module.scss'
+import { useMemo } from 'react'
 import { attributeFullName } from '../../../../utils/constants'
 const Stats = (props) => {
     const hero = props.hero
-    let heroAttributes = []
-    for (let attr in attributeFullName) {
-        heroAttributes.push(
-            <div key={attr}>
-                <img className={
-                    attr === hero?.primary_attr ? styles.activeAttribute : styles.attributeImg
-                } src={require(`../../../../Assets/Attributes/${attr}.png`)} alt='attribute'></img>
-                <span>{hero?.[`base_${attr}`]} {`(Gain ${hero?.[`${attr}_gain`]} / lvl)`}</span>
-            </div>
-        )
-    }
+    const heroAttributes = useMemo(() => {
+        const result = []
+        for (let attr in attributeFullName) {
+            result.push(
+                <div key={attr}>
+                    <img className={
+                        attr === hero?.primary_attr ? styles.activeAttribute : styles.attributeImg
+                    } src={require(`../../../../Assets/Attributes/${attr}.png`)} alt='attribute'></img>
+                    <span>{hero?.[`base_${attr}`]} {`(Gain ${hero?.[`${attr}_gain`]} / lvl)`}</span>
+                </div>
+            )
+        }
+        return <div>{result}</div>
+    }, [hero])
     return (
         <div className={styles.hero_overview_stats}>
             <div className={styles.statsBlock}>
