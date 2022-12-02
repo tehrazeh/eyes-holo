@@ -6,6 +6,7 @@ import { fetchHeroes, selectHeroById } from '../Redux/slices/heroesSlice'
 import { fetchAllAbilities } from '../Redux/slices/abilitiesSlice'
 import styles from './Pages Styles/Hero.module.scss'
 import { useState } from 'react'
+import { attributeFullName } from '../constants'
 
 const Hero = () => {
   const { id } = useParams() // id from the search bar
@@ -47,10 +48,10 @@ const Hero = () => {
         </div>}
       </div>  
       <div className={styles.abilityBlock_bottom}>
-        <div>
+        { ability?.desc && <div>
           <p>Description</p>
           <span>{ability.desc}</span>
-        </div>
+        </div>}
         { ability?.lore && <div>
           <p>Lore</p>
           <span>{ability.lore}</span>
@@ -58,10 +59,17 @@ const Hero = () => {
       </div>
     </div>
   })
-
-
-
-
+let heroAttributes = []
+for (let attr in attributeFullName) {
+  heroAttributes.push(
+    <div key={attr}>
+        <img className={
+          attr === hero?.primary_attr ? styles.activeAttribute : styles.attributeImg
+        }src={require(`../Assets/Attributes/${attr}.png`)} alt='attribute'></img>
+        <span>{hero?.[`base_${attr}`]} {`(Gain ${hero?.[`${attr}_gain`]} / lvl)`}</span>
+    </div>
+  )
+}
 
   if (statusAbilities === 'loading' || statusHero === 'loading') { // loading, either page was refreshed or waiting for request  
     return <>Zagruzka...😎</>
@@ -78,63 +86,55 @@ const Hero = () => {
           <img src={link + hero.img} alt='hero' />
           <div>
             <h2>{hero.localized_name}</h2>
-            <p>Primary Attribute: {hero.primary_attr}</p>
+            <p className={styles[hero?.primary_attr]}>Primary Attribute: {attributeFullName[hero.primary_attr].toUpperCase()}</p>
+            <p>Attack type: {hero.attack_type}</p>
             {roles}
           </div>
         </div>
         <div className={styles.hero_overview_stats}>
-          <div className={styles.hero_overview_stats_attack}>
-            <div>
+            <div className={styles.statsBlock}>
               <h2>Attack</h2>
-              <span></span>
+              <div>
+                <span>Damage: {hero.base_attack_min} - {hero.base_attack_max}</span>
+                <span>Attack speed: 115 {`(1.13 / s)`}</span>
+              </div>
             </div>
-          </div>
-          <div className={styles.hero_overview_stats_defense}>
-            <div>
+            <div className={styles.statsBlock}>
               <h2>Defense</h2>
-              <span></span>
+              <div>
+                <span>Armor : 10</span>
+              </div>
             </div>
-          </div>
-          <div className={styles.hero_overview_stats_mobility}>
-            <div>
+            <div className={styles.statsBlock}>
               <h2>Mobility</h2>
-              <span></span>
+              <div>
+                <span>Move speed: {hero.move_speed}</span>
+                <span>Legs: {hero.legs}</span>
+              </div>
             </div>
-          </div>
-          <div className={styles.hero_overview_stats_hpAndMana}>
-            <div>
+            <div className={styles.statsBlock}>
               <h2>Health / Mana</h2>
-              <span></span>
+              <div>
+                <span>Health: 620</span>
+                <span>Mana: 300</span>
+              </div>
             </div>
-          </div>
-          <div className={styles.hero_overview_stats_attributes}>
-            <div className={styles.hero_overview_stats_attributes_str}>
-            <div>
-              <img src={require('../Assets/Attributes/str.png')} alt='attribute'></img>
-              <span></span>
-            </div>
-            </div>
-            <div className={styles.hero_overview_stats_attributes_agi}>
-              <img src={require('../Assets/Attributes/agi.png')} alt='attribute'></img>
-              <span></span>
-            </div>
-            <div className={styles.hero_overview_stats_attributes_int}>
-              <img src={require('../Assets/Attributes/int.png')} alt='attribute'></img>
-              <span></span>
-            </div>
+          <div className={styles.statsBlock}>
+            <h2>Attributes</h2>
+            {heroAttributes}
           </div>       
         </div>
         <div className={styles.hero_overview_lore}>
           Lore:
           "As a grunt in the Army of Red Mist, Mogul Khan set his sights on the rank of Red Mist General.
-          In battle after battle he proved his worth through gory deed. His rise through the ranks was 
+          {/* In battle after battle he proved his worth through gory deed. His rise through the ranks was 
           helped by the fact that he never hesitated to decapitate a superior. Through the seven year Campaign
            of the Thousand Tarns, he distinguished himself in glorious carnage, his star of fame shining ever
             brighter, while the number of comrades in arms steadily dwindled. On the night of ultimate victory,
              Axe declared himself the new Red Mist General, and took on the ultimate title of 'Axe.' But his
               troops now numbered zero. Of course, many had died in battle, but a significant number had also
                fallen to Axe's blade. Needless to say, most soldiers now shun his leadership. But this matters
-                not a whit to Axe, who knows that a one-man army is by far the best."
+                not a whit to Axe, who knows that a one-man army is by far the best." */}
         </div>
       </div>
       <div className={styles.abilities}>{abilities}</div>

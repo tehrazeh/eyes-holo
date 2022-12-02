@@ -7,6 +7,23 @@ img {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+
+    p {
+        font-size: 1.2em !important;
+        font-weight: 500 !important;
+    }
+}
+
+.str {
+    color: red
+}
+
+.agi {
+    color: greenyellow;
+}
+
+.int {
+    color: rgb(60, 172, 241)
 }
 
 .role {
@@ -19,10 +36,25 @@ img {
 .Container {
     margin: 0 auto;
     width: 95%;
+
+    p {
+        font-size: 1.1em;
+        font-weight: bolder;
+    }
 }
 
 .header {
     background-color: brown;
+}
+
+.attributeImg {
+    width: 30px;
+    opacity: 0.8;
+}
+
+.activeAttribute {
+    width: 40px;
+    filter:brightness(1.5)
 }
 
 .hero_overview{
@@ -59,8 +91,31 @@ img {
 
     &_stats {
         grid-area: stats;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
         border-radius: 5px;
         background-color: rgb(39, 25, 53);
+
+        .statsBlock {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 90%;
+            margin: 15px;
+
+            div {
+                width: 100%;
+                padding: 5px;
+                margin: 5px 0;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                background-color: rgb(10, 27, 17);
+            }
+        }
     }
 
     &_lore {
@@ -91,6 +146,7 @@ img {
 
         &_stats {
             background-color: rgb(66, 49, 8);
+            min-height: 50px;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -111,13 +167,11 @@ img {
         background-color: rgb(26, 35, 63);
         display: flex;
 
-        & > :first-child {
-            width: 65%;
+        & > :first-child, & > :last-child {
+            width: 50%;
         }
 
-        & > :last-child {
-            width: 35%;
-        }
+
 
         div {
             margin: 5px;
