@@ -3,3 +3,5 @@ export const attributeFullName = {
     'agi' : 'agility',
     'int' : 'intellect'
 }
+
+export const link = 'https://api.opendota.com' 
