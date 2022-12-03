@@ -18,7 +18,10 @@ export const Abilities = (props) => {
     const abilities = heroAbilities?.map((ability, index) => { // get the abilities
         return <div className={styles.abilityBlock} key={index}>
           <div className={styles.abilityBlock_top}>
-            <img src={link + ability.img} alt='ability' />
+            <div className={styles.abilityBlock_top_image}>
+              <div className={styles.tooltip}>{ability.dname}</div>
+              <img src={link + ability.img} alt='ability' />
+            </div>
             <div className={styles.abilityBlock_top_stats}>
               <div>
                 <p>Cooldown</p>
@@ -33,7 +36,7 @@ export const Abilities = (props) => {
               <p>Damage Type</p>
               <div>
               <img className={styles.utilityIcon} 
-              src={require(`../../../../Assets/Damage/${ability.dmg_type.toLowerCase()}.png`)}/>
+              src={require(`../../../../Assets/Damage/${ability.dmg_type.toLowerCase()}.png`)} alt='type'/>
               <span>{ability.dmg_type}</span>
               </div>
             </div>}
@@ -42,7 +45,7 @@ export const Abilities = (props) => {
             { ability?.desc && <div>
               <div className={styles.title}>
                 <img className={styles.utilityIcon} 
-                src={require(`../../../../Assets/Hero/description.png`)}/>
+                src={require(`../../../../Assets/Hero/description.png`)} alt='description'/>
                 <p>Description</p>
               </div>
               <span>{ability.desc}</span>
@@ -50,7 +53,7 @@ export const Abilities = (props) => {
             { ability?.lore && <div>
               <div className={styles.title}>
                 <img className={styles.utilityIcon} 
-                src={require(`../../../../Assets/Hero/lore.png`)}/>
+                src={require(`../../../../Assets/Hero/lore.png`)} alt='lore'/>
                 <p>Lore</p>
               </div>
               <span>{ability.lore}</span>

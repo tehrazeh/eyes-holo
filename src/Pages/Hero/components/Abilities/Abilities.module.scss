@@ -15,7 +15,7 @@
     border-radius: 5px;
     display: flex;
     width: 32%;
-    margin: 10px 0;
+    margin: 15px 0;
     flex-direction: column;
     font-size: .95em;
     img {
@@ -26,6 +26,42 @@
         padding: 10px;
         display: flex;
         justify-content: space-evenly;
+        
+        &_image{   
+            position: relative;
+            img:hover {
+                filter: brightness(1.2);
+            }
+            .tooltip {
+                position: absolute;
+                background-color: rgb(31, 31, 55);
+                padding: 0.3em;
+                border-radius: 3px;
+                left: 50%;
+                top: -40px;
+                width: max-content;
+                transform: translateX(-50%);
+                display: none;
+                
+            }
+
+            .tooltip::after{
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                border-width: 5px;
+                border-style: solid;
+                border-color: rgb(31, 31, 55) transparent transparent transparent;   
+            }
+        }
+
+        &_image:hover {
+            .tooltip {
+                display: block;
+            }
+        }
 
         &_stats {
             min-height: 50px;
