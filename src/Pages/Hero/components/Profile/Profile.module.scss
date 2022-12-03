@@ -38,4 +38,18 @@
     .attackType {
         width: 35px;
     }
+
+    .rolesTitle {
+        display: flex;
+        justify-content: center;
+        img {
+            width: 20px;
+            vertical-align: middle;
+        }
+
+        img:hover {
+            cursor: pointer;
+            filter: brightness(1.3);
+        }
+    }
 }

@@ -7,6 +7,7 @@ import Heroes from './Components/Main/Content/Heroes/Heroes';
 import Hero from './Pages/Hero/Hero';
 import Item from './Pages/Item'
 import { Routes, Route } from 'react-router-dom';
+import Roles from './Pages/Roles/Roles';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/Items" element={<Items />}/>
           <Route path="/Heroes/:id" element={<Hero />}/>
           <Route path="/Items/:id" element={<Item />}/>
+          <Route path="/Roles" element={<Roles />}/>
         </Routes>
       </div>
       <Footer />

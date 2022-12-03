@@ -1,5 +1,6 @@
 import styles from './Profile.module.scss'
 import { link, attributeFullName } from '../../../../utils/constants'
+import { Link } from 'react-router-dom'
 
 const Profile = (props) => {
     const hero = props.hero
@@ -17,7 +18,12 @@ const Profile = (props) => {
                     src={require(`../../../../Assets/Hero/${hero?.attack_type.toLowerCase()}.png`)} />
                     {hero?.attack_type}
                 </p>
+                <div className={styles.rolesTitle}>
+                    <p>Roles</p>
+                    <Link to='/Roles'><img src={require(`../../../../Assets/Misc/info.png`)}/></Link>
+                </div>
                 {roles}
+                
             </div>
         </div>
     )

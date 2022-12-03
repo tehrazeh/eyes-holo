@@ -1,0 +1,75 @@
+.rolesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .role {
+        text-align: center;
+        background-color: rgb(16, 39, 60);
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 1.2em;
+        font-weight: 300;
+        width: 25%;
+        line-height: 2em;
+
+        p {
+            font-size: 1.3em;
+            font-weight: 400;
+        }
+        img {
+            width: 50px;
+            margin-right: 20px;
+        }
+
+        .title {
+            display: flex;
+            width: 100%;
+            padding: 20px 10px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}   
+
+@media screen and (max-width: 800px) {
+
+    .rolesContainer {
+        .role {
+            margin: 5px;
+            padding: 5px;
+            border-radius: 10px;
+            font-size: 1em;
+            min-width: 40%;
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+
+    .rolesContainer {
+        .role {   
+          p {
+                font-size: 1.1em;
+            }
+            img {
+                width: 30px;
+                margin-right: 10px;
+            }
+    
+            .title {
+                padding: 10px 5px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    .rolesContainer {
+        .role {
+            width: 90%;
+        }
+    }
+}
