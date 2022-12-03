@@ -17,7 +17,11 @@ const HeroBlockByAttribute = (props) => {
         }
     }
 
+    // if input has part of the name of the hero
+    const checkNameFilter = (name) => name.toLowerCase().includes(searchValue.toLowerCase())
 
+    // if hero is of selected role
+    const checkRoleFilter = (roles) => currentFilter.every(value => roles.includes(value))
 
     // construct block of links of hero images
     const constructHeroBlock = heroes.map(hero => {
@@ -25,13 +29,13 @@ const HeroBlockByAttribute = (props) => {
             <div className={styles.heroBlock} key={hero.id}>    
             <Link to={'/Heroes/' + hero.id} >
                 <img className={
-                    hero.localized_name.toLowerCase().includes(searchValue.toLowerCase()) && // satisfies input search?
-                    currentFilter.every(value => hero.roles.includes(value))  ? // satisfies role filter?
+                    checkNameFilter(hero.localized_name) && // satisfies input search?
+                    checkRoleFilter(hero.roles)  ? // satisfies role filter?
                     styles.heroBlock_image_active : styles.heroBlock_image_notActive
                     } src={props.link + hero.img} alt='hero icon' />
                 <p className={
-                    hero.localized_name.toLowerCase().includes(searchValue.toLowerCase()) && // satisfies input search?
-                    currentFilter.every(value => hero.roles.includes(value)) ? // satisfies role filter?
+                    checkNameFilter(hero.localized_name) && // satisfies input search?
+                    checkRoleFilter(hero.roles) ? // satisfies role filter?
                     styles.heroBlock_title : styles.heroBlock_title_inactive}>{hero.localized_name}</p>
             </Link>
             </div>

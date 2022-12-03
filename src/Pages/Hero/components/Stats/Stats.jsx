@@ -11,7 +11,7 @@ const Stats = (props) => {
                     <img className={
                         attr === hero?.primary_attr ? styles.activeAttribute : styles.attributeImg
                     } src={require(`../../../../Assets/Attributes/${attr}.png`)} alt='attribute'></img>
-                    <span>{attributeFullName[attr]} {hero?.[`base_${attr}`]}</span>
+                    <span>{attributeFullName[attr]}: {hero?.[`base_${attr}`]}</span>
                     <span>{`(Gain ${hero?.[`${attr}_gain`]} / lvl)`}</span>
                 </div>
             )

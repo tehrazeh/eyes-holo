@@ -10,6 +10,7 @@ const Items = () => {
 
   const itemElements = []
   for (let item in items) {
+    if (!item.startsWith('recipe_')) // filter recipe elements
     itemElements.push(<Link to={'/Items/' + items[item].id} key={items[item].id}>
       <img src={link + items[item].img} alt='item' />
     </Link>)

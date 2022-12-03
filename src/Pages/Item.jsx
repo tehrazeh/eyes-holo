@@ -26,7 +26,8 @@ const Hero = () => {
 
   useEffect(() => {
     if (itemAttributes) { // item attributes loaded, get the components
-      dispatch(setComponents({ componentNames: itemAttributes.components, itemCost: itemAttributes.cost, itemName: itemAttributes.dname }))
+      dispatch(setComponents({ componentNames: itemAttributes.components,
+         itemCost: itemAttributes.cost, itemName: itemAttributes.dname }))
     } else if (!itemAttributes) { // no item attributes, fetch info about item
       dispatch(fetchItems())
     }
@@ -39,8 +40,10 @@ const Hero = () => {
 
   return (
     <div>
-      <div>Item: {itemAttributes.dname} Cost: {itemAttributes.cost}</div>
-      <div>Components: {componentElements}
+      { itemAttributes?.qual && <div>Quality: {itemAttributes.qual}</div>}
+      <div>Item: {itemAttributes.dname}</div>
+      <div>Cost: {itemAttributes.cost}</div> 
+      <div>Components: {componentElements} 
         {itemRecipe && <div><p>{itemRecipe.cost}</p>
             <img src={link + itemRecipe.img} alt='recipe'></img>
         </div>}

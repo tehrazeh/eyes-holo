@@ -5,7 +5,7 @@
         z-index: 1;
         position: absolute;
         left: 50%;
-        bottom: -.25rem;
+        bottom: 0;
         transform: translateX(-50%) translateY(125%);
         background-color: rgb(27, 29, 47);
         border-radius: 5px;
@@ -13,8 +13,7 @@
         display: none;
         line-height: 1.5em;
         width: 580%;
-        height: 250%;
-        // max-width: 500%;
+        height: fit-content;
         color: rgb(213, 217, 255);
         span {
             text-align: left;
