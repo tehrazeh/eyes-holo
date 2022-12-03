@@ -7,11 +7,12 @@ const Stats = (props) => {
         const result = []
         for (let attr in attributeFullName) {
             result.push(
-                <div key={attr}>
+                <div key={attr} className={styles.attributeStat}>
                     <img className={
                         attr === hero?.primary_attr ? styles.activeAttribute : styles.attributeImg
                     } src={require(`../../../../Assets/Attributes/${attr}.png`)} alt='attribute'></img>
-                    <span>{hero?.[`base_${attr}`]} {`(Gain ${hero?.[`${attr}_gain`]} / lvl)`}</span>
+                    <span>{attributeFullName[attr]} {hero?.[`base_${attr}`]}</span>
+                    <span>{`(Gain ${hero?.[`${attr}_gain`]} / lvl)`}</span>
                 </div>
             )
         }

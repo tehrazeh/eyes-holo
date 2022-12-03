@@ -1,10 +1,12 @@
 .attributeImg {
     width: 30px;
+    margin: 5px 15px;
     opacity: 0.8;
 }
 
 .activeAttribute {
     width: 40px;
+    margin: 2.5px 10px;
     filter:brightness(1.5)
 }
 
@@ -15,7 +17,7 @@
     justify-content: space-evenly;
     align-items: center;
     border-radius: 5px;
-    background-color: rgb(39, 25, 53);
+    background-color: rgb(9, 12, 20);
 
     .statsBlock {
         display: flex;
@@ -30,9 +32,18 @@
             padding: 5px;
             margin: 5px 0;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: flex-start;
             align-items: center;
-            background-color: rgb(10, 27, 17);
+            border-radius: 8px;
+            background-color: rgb(31, 31, 55);
+        }
+
+        .attributeStat {
+            justify-content: space-evenly;
+        }
+
+        span {
+            margin: 0 30px;
         }
     }
 }
