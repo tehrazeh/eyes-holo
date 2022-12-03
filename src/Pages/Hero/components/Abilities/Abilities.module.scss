@@ -1,9 +1,9 @@
 .abilities {
-    background-color: rgb(102, 61, 26);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
-
+    width: 95%;
+    margin: 20px auto;
     p {
         font-size: 1.2em !important;
         font-weight: 500 !important;
@@ -11,25 +11,23 @@
 }
 
 .abilityBlock {
-    background-color: rosybrown;
-    margin: 10px 0;
+    background-color: rgb(9, 12, 20);
+    border-radius: 5px;
     display: flex;
-    width: 33%;
+    width: 32%;
+    margin: 10px 0;
     flex-direction: column;
-    padding: 10px;
-
+    font-size: .95em;
     img {
         border-radius: 5px;
     }
 
     &_top {
-        padding: 5px;
-        background-color: rgb(111, 84, 15);
+        padding: 10px;
         display: flex;
         justify-content: space-evenly;
 
         &_stats {
-            background-color: rgb(66, 49, 8);
             min-height: 50px;
             display: flex;
             flex-direction: column;
@@ -42,26 +40,18 @@
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            background-color: rgb(15, 29, 25);
         }
     }
 
     &_bottom {
         padding: 2px;
-        background-color: rgb(26, 35, 63);
         display: flex;
-
-        & > :first-child, & > :last-child {
-            width: 50%;
-        }
-
-
+        flex-direction: column;
 
         div {
             margin: 5px;
             font-weight: 200;
             line-height: 1.8em;
-            background-color: rgb(50, 51, 21);
         }
     }
 }
