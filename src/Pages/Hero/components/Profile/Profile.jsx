@@ -12,7 +12,11 @@ const Profile = (props) => {
             <div>
                 <h2>{hero.localized_name}</h2>
                 <p className={styles[hero?.primary_attr]}>Primary: {attributeFullName[hero?.primary_attr]}</p>
-                <p>Attack type: {hero?.attack_type}</p>
+                <p>Attack type: 
+                    <img className={styles.attackType}
+                    src={require(`../../../../Assets/Hero/${hero?.attack_type.toLowerCase()}.png`)} />
+                    {hero?.attack_type}
+                </p>
                 {roles}
             </div>
         </div>

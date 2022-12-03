@@ -53,5 +53,20 @@
             font-weight: 200;
             line-height: 1.8em;
         }
+
+        .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 35px;
+                margin-right: 8px;            }
+        }
     }
+}
+
+.utilityIcon {
+    width: 30px;
+    margin-right: 5px;
 }

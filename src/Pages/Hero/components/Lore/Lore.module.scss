@@ -4,7 +4,7 @@
     line-height: 2em;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     background-color: rgb(9, 12, 20);
     padding: 0 20px;
     font-weight: 200;
@@ -12,5 +12,14 @@
 
     p {
         margin: 8px;
+    }
+
+    img {
+        width: 40px;
+    }
+
+    & > :first-child {
+        display: flex;
+        justify-content: center;
     }
 }

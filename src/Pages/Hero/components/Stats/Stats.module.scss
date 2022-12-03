@@ -1,12 +1,11 @@
 .attributeImg {
     width: 30px;
-    margin: 5px 15px;
+    margin: 5px;
     opacity: 0.8;
 }
 
 .activeAttribute {
     width: 40px;
-    margin: 2.5px 10px;
     filter:brightness(1.5)
 }
 
@@ -27,6 +26,15 @@
         width: 90%;
         margin: 15px;
 
+        & > :first-child {
+            display: flex;
+            background: none;
+            img {
+                width: 35px;
+                margin-right: 5px;
+            }
+        }
+
         div {
             width: 100%;
             padding: 5px;
@@ -39,7 +47,7 @@
         }
 
         .attributeStat {
-            justify-content: space-evenly;
+            justify-content: space-between;
         }
 
         span {

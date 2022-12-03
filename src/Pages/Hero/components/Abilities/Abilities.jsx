@@ -31,16 +31,28 @@ export const Abilities = (props) => {
             </div>
             {ability?.dmg_type && <div className={styles.abilityBlock_top_dmg}>
               <p>Damage Type</p>
+              <div>
+              <img className={styles.utilityIcon} 
+              src={require(`../../../../Assets/Damage/${ability.dmg_type.toLowerCase()}.png`)}/>
               <span>{ability.dmg_type}</span>
+              </div>
             </div>}
           </div>  
           <div className={styles.abilityBlock_bottom}>
             { ability?.desc && <div>
-              <p>Description</p>
+              <div className={styles.title}>
+                <img className={styles.utilityIcon} 
+                src={require(`../../../../Assets/Hero/description.png`)}/>
+                <p>Description</p>
+              </div>
               <span>{ability.desc}</span>
             </div>}
             { ability?.lore && <div>
-              <p>Lore</p>
+              <div className={styles.title}>
+                <img className={styles.utilityIcon} 
+                src={require(`../../../../Assets/Hero/lore.png`)}/>
+                <p>Lore</p>
+              </div>
               <span>{ability.lore}</span>
             </div>}
           </div>
