@@ -16,15 +16,12 @@
     border-radius: 5px;
     justify-content: space-evenly;
     align-items: center;
-    background-color: cadetblue;
+    background-color: rgb(9, 12, 20);
     line-height: 3em;
     padding: 10px;
 
     & * {
         margin: 0 10px;
-    }
-    div {
-        background-color: rgb(54, 79, 71);
     }
     img {
         border-radius: 5px;
@@ -32,9 +29,9 @@
     }
 
     .role {
-        background-color: rgb(28, 11, 46);
-        border-radius: 8px;
-        padding: 2px 4px;
+        background-color: rgb(31, 31, 55);
+        border-radius: 10px;
+        padding: 4px 8px;
         margin: 5px;
     }
 }
