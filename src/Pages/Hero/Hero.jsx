@@ -28,7 +28,7 @@ const Hero = () => {
   return (
     <div className={styles.Container}>
       <div className={styles.header}>
-        <Link to='/Heroes'>Heroes </Link>{' > '}
+        <Link to='/Heroes'>Heroes</Link> {' > '}
         <img src={link + hero.icon} alt='hero icon' />
       </div>
       <div className={styles.hero_overview}>

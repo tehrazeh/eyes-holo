@@ -3,9 +3,7 @@ img {
 }
 
 .Container {
-    margin: 0 auto;
-    width: 95%;
-
+    color: rgb(190, 193, 221);
     p {
         font-size: 1.1em;
         font-weight: bolder;
@@ -13,10 +11,32 @@ img {
 }
 
 .header {
-    background-color: brown;
+    background-color: rgb(9, 12, 20);
+    margin-bottom: 10px;
+    color: rgb(190, 193, 221);
+    min-height: 35px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 40px;
+    img {
+        width: 35px;
+    }
+    a {
+        text-decoration: none;
+        color: rgb(190, 193, 221);
+        margin-right: 8px;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        filter:brightness(1.1)
+    }
 }
 
 .hero_overview{
+    width: 95%;
+    margin: 0 auto;
     display: grid;
     grid-template-rows: 0.5fr 1.5fr;
     grid-template-columns: 1fr 1fr;
