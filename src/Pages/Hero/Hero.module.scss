@@ -18,11 +18,10 @@ img {
 
 .hero_overview{
     display: grid;
-    padding: 20px;
     grid-template-rows: 0.5fr 1.5fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
     "description stats"
     "lore stats";
-    grid-gap: 10px;
+    grid-gap: 5px;
 }

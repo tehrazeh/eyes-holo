@@ -5,5 +5,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: rgb(27, 53, 25);
+    background-color: rgb(9, 12, 20);
+    padding: 0 20px;
+    font-weight: 200;
+    color: rgb(190, 193, 221);
+
+    p {
+        margin: 8px;
+    }
 }

@@ -6,7 +6,7 @@ const Lore = (props) => {
     const lore = useHeroLore(hero?.name)
   return (
     <div className={styles.lore}>
-          <p>Lore:</p>
+          <p>Lore</p>
           {lore}
         </div>
   )
