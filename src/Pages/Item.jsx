@@ -42,11 +42,11 @@ const Item = () => {
       {/* { itemStats?.qual && <div>Quality: {itemStats.qual}</div>} */}
       <div>Item: {itemStats.dname}</div>
       <div>Cost: {itemStats.cost}</div> 
-      <div>Components: {componentElements} 
+      { componentElements.length > 0 && <div>Components: {componentElements} 
         {itemRecipe && <div><p>{itemRecipe.cost}</p>
             <img src={link + itemRecipe.img} alt='recipe'></img>
         </div>}
-      </div>
+      </div>}
     </div>
   )
 }

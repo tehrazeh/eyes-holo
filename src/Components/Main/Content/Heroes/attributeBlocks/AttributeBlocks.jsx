@@ -50,7 +50,7 @@ const HeroBlockByAttribute = (props) => {
         <div className={styles.attributeBlock}>
             <img src={require(`../../../../../Assets/Attributes/${props.attribute}.png`)}  alt='attribute'/>
             <span>{attributeFullName[props.attribute]}</span>
-            </div>
+        </div>
         <div className={styles.heroesBlock}>
             {constructHeroBlock}
         </div>
