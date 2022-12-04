@@ -14,9 +14,76 @@
     align-items: center;
 }
 
+.rarityImg {
+    width: 50px;
+}
+// CLASSES FOR RARITY
+.rare {
+    background-color: rgba(31, 61, 157, 0.25);
+    border-radius: 5px;
+    p, .elementTitle {
+        filter:brightness(1.5);
+        color: rgb(17, 120, 255)
+    }  
+}
+.consumable {
+    background-color: rgba(68, 187, 255, 0.25);
+    border-radius: 5px;
+    p, .elementTitle {
+        filter:brightness(1.5);
+        color: rgb(17, 184, 255)
+    }  
+}
+.common {
+    background-color: rgba(136, 255, 52, 0.25);
+    border-radius: 5px;
+    p, .elementTitle {
+        filter:brightness(1.5);
+        color: rgb(115, 202, 39)
+    }  
+}
+.epic {
+    background-color: rgba(144, 59, 190, 0.25);
+    border-radius: 5px;
+    p, .elementTitle {
+        filter:brightness(1.5);
+        color: rgb(174, 93, 249)
+    }  
+}
+.artifact {
+    background-color: rgba(255, 149, 0, 0.25);
+    border-radius: 5px;
+    p, .elementTitle {
+        filter:brightness(1.5);
+        color: rgb(254, 152, 69)
+    }  
+}
+.secret_shop {
+    background-color: rgba(184, 23, 8, 0.25);
+    border-radius: 5px;
+    p, .elementTitle {
+        filter:brightness(1.5);
+        color: rgb(255, 106, 36)
+    }  
+}
+.component {
+    background-color: rgba(202, 214, 215, 0.25);
+    border-radius: 5px;
+    p, .elementTitle {
+        filter:brightness(1.5);
+        color: rgb(185, 178, 176)
+    }  
+}
+// -------------------
 .elementsBlock {
     display: flex;
     flex-wrap: wrap;
+}
+
+.elementTitle {
+    text-transform: uppercase;
+    font-weight: 350;
+    font-size: 1.1em;
 }
 
 .element {
@@ -26,7 +93,7 @@
     width: 70px;
     max-width: 80px;
     position: relative;
-
+    transition: 0.2s ease-in-out;
     img {
         width: 100%;   
         vertical-align: middle;
@@ -42,13 +109,13 @@
         text-decoration: none;
         position: absolute;
         width: 100%;
-        bottom: 0;
+        bottom: 0.0;
         left: 0;
         background-color: rgba(33, 33, 33, 0.6);
         text-decoration: none;
         font-size: 0.7em;
         letter-spacing: 0.05em;
-        color:aliceblue;
+        // color:aliceblue;
         font-weight: lighter;
         opacity: 0;
     }

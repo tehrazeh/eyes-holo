@@ -15,9 +15,9 @@ const QualityBlocks = (props) => {
   </div>
   })
   return (
-    <div className={styles.elementSection}>
+    <div className={`${styles.elementSection} ${styles[props.itemQuality]}`}>
       <div className={styles.elementTitle}>
-        {/* <img></img> // for quality img */}
+        <img className={styles.rarityImg} src={require(`../../../../../Assets/Rarity/${props.itemQuality}.png`)}/>
         <span>{props.itemQuality}</span>
       </div>
       <div className={styles.elementsBlock}>
