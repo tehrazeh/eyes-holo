@@ -7,14 +7,14 @@ import styles from './Heroes.module.scss'
 import HeroesHeader from './heroesHeader/HeroesHeader'
 
 const Heroes = () => {
-  const {status, link} = useSelector((state) => state.hero) // get state from slice
+  const {status} = useSelector((state) => state.hero) // get state from slice
   const dispatch = useDispatch() // for reducer callbacks
   const [attributes] = useState(['str', 'agi', 'int']) // attributes of heroes
 
 
   // render block of heroes for each attributes
   const heroBlocks = attributes.map(attribute => {
-      return <HeroBlockByAttribute attribute={attribute} link={link} key={attribute}/>
+      return <HeroBlockByAttribute attribute={attribute} key={attribute}/>
     })
 
 

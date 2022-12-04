@@ -33,3 +33,9 @@ export const dotaRoles = [
     {name: 'Initiator', description: 
     `Good at starting a teamfight.`},
 ]
+
+export const itemQualities = [
+    "rare"
+    // , "artifact", "secret_shop",
+    // "consumable", "common", "epic", "component"
+]

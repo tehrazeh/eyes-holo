@@ -1,5 +1,5 @@
 import React from 'react'
-import { attributeFullName } from '../../../../../utils/constants'
+import { attributeFullName, link } from '../../../../../utils/constants'
 import { useSelector } from 'react-redux'
 import { selectHeroByAttribute } from '../../../../../Redux/slices/heroesSlice'
 import { Link } from 'react-router-dom'
@@ -32,11 +32,12 @@ const HeroBlockByAttribute = (props) => {
                     checkNameFilter(hero.localized_name) && // satisfies input search?
                     checkRoleFilter(hero.roles)  ? // satisfies role filter?
                     styles.heroBlock_image_active : styles.heroBlock_image_notActive
-                    } src={props.link + hero.img} alt='hero icon' />
+                    } src={link + hero.img} alt='hero icon' />
                 <p className={
                     checkNameFilter(hero.localized_name) && // satisfies input search?
                     checkRoleFilter(hero.roles) ? // satisfies role filter?
-                    styles.heroBlock_title : styles.heroBlock_title_inactive}>{hero.localized_name}</p>
+                    styles.heroBlock_title : styles.heroBlock_title_inactive}>
+                {hero.localized_name}</p>
             </Link>
             </div>
         )

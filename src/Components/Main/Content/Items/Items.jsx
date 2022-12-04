@@ -2,20 +2,16 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchItems } from '../../../../Redux/slices/itemsSlice'
-import { Link } from 'react-router-dom'
+import { itemQualities } from '../../../../utils/constants'
+import QualityBlocks from './qualityBlocks/QualityBlocks'
 
 const Items = () => {
   const dispatch = useDispatch()
-  const { items, status, link } = useSelector(state => state.item)
-
-  const itemElements = []
-  for (let item in items) {
-    if (!item.startsWith('recipe_')) // filter recipe elements
-    itemElements.push(<Link to={'/Items/' + items[item].id} key={items[item].id}>
-      <img src={link + items[item].img} alt='item' />
-    </Link>)
-  }
-
+  const { status } = useSelector(state => state.item)
+  
+  const itemBlocks = itemQualities.map((quality) => {
+    return <QualityBlocks itemQuality={quality} key={quality}/>
+  })
   useEffect(() => {
     dispatch(fetchItems())
   }, [dispatch])
@@ -24,7 +20,7 @@ const Items = () => {
     return <>Zagruzka...😎</>
   }
   return (
-    <div>{itemElements}</div>
+    <div>{itemBlocks}</div>
   )
 }
 

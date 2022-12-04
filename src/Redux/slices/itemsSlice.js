@@ -25,9 +25,12 @@ const itemsSlice = createSlice({
             const componentElements = [] // TODO! refactor to not use this variable and change the state
             let componentCosts = 0
             if (action.payload.componentNames !== null) { // item has components
-                action.payload.componentNames.forEach(component => componentElements.push(state.items[component]))
+                action.payload.componentNames.forEach(component => {
+                    if (!component.startsWith('recipe_')) { // for exceptions like dagon, necronomicon
+                        componentElements.push(state.items[component])
+                    }
+                })
                 state.itemComponents = componentElements
-
                 // get the cost of components to determine if the item has recipe
                 componentCosts = componentElements.reduce((sum, component) => {
                     return sum + component.cost
@@ -51,7 +54,8 @@ const itemsSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchItems.fulfilled, (state, action) => { // sucess, get and save abilities to redux
-            state.items = action.payload
+            // filter endless recipe entries
+            state.items = Object.fromEntries(Object.entries(action.payload).filter(([key]) => !key.startsWith('recipe_')))
             state.status = 'loaded'
         })
         builder.addCase(fetchItems.pending, (state) => { // waiting for a response
@@ -72,6 +76,18 @@ export const selectItemById = (itemId) => (state) => {
     return Object.fromEntries(selectedItem) // create object for selected item and return it
     // return Object.fromEntries(Object.entries(items).filter(([key, value]) => value.id === itemId))
 }
+
+export const selectItemsByQuality = (itemQuality) => (state) => {
+    const filteredItems = []
+    for (let item in state.item.items) {
+        if (state.item.items[item].qual === itemQuality) {
+            filteredItems.push(state.item.items[item])
+        }
+    }
+    // console.log(filteredItems)
+    return filteredItems
+}
+
 
 export const { setComponents } = itemsSlice.actions
 

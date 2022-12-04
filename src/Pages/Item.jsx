@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useParams, Link } from 'react-router-dom'
 import { fetchItems, selectItemById, setComponents } from '../Redux/slices/itemsSlice'
 
-const Hero = () => {
+const Item = () => {
   const { id } = useParams() // id from the search bar
   const item = useSelector(selectItemById(id)) // selector that returns array with 1 object of matched item
 
@@ -14,24 +14,23 @@ const Hero = () => {
 
 
   const itemKey = Object.keys(item)[0] // key of the item (overwhelming_blink)
-  const itemAttributes = item[itemKey] // object of item attributes: img, full name etc.
-
+  const itemStats = item[itemKey] // object of item attributes: img, full name etc.
   const componentElements = components.map((component, index) => { // array of component images
-    return <div key={index}><p>{component.cost}</p>
-      <Link to={'/Items/' + component.id} >
-        <img src={link + component.img} alt='component'></img>
+    return <div key={index}><p>{component?.cost}</p>
+      <Link to={'/Items/' + component?.id} >
+        <img src={link + component?.img} alt='component'></img>
       </Link>
     </div>
   })
 
   useEffect(() => {
-    if (itemAttributes) { // item attributes loaded, get the components
-      dispatch(setComponents({ componentNames: itemAttributes.components,
-         itemCost: itemAttributes.cost, itemName: itemAttributes.dname }))
-    } else if (!itemAttributes) { // no item attributes, fetch info about item
+    if (itemStats) { // item attributes loaded, get the components
+      dispatch(setComponents({ componentNames: itemStats.components,
+         itemCost: itemStats.cost, itemName: itemStats.dname }))
+    } else if (!itemStats) { // no item attributes, fetch info about item
       dispatch(fetchItems())
     }
-  }, [itemAttributes, dispatch])
+  }, [itemStats, dispatch])
 
 
   if (status === 'loading') { // loading, either page was refreshed or waiting for request
@@ -40,9 +39,9 @@ const Hero = () => {
 
   return (
     <div>
-      { itemAttributes?.qual && <div>Quality: {itemAttributes.qual}</div>}
-      <div>Item: {itemAttributes.dname}</div>
-      <div>Cost: {itemAttributes.cost}</div> 
+      {/* { itemStats?.qual && <div>Quality: {itemStats.qual}</div>} */}
+      <div>Item: {itemStats.dname}</div>
+      <div>Cost: {itemStats.cost}</div> 
       <div>Components: {componentElements} 
         {itemRecipe && <div><p>{itemRecipe.cost}</p>
             <img src={link + itemRecipe.img} alt='recipe'></img>
@@ -53,4 +52,4 @@ const Hero = () => {
 }
 
 
-export default Hero
+export default Item
