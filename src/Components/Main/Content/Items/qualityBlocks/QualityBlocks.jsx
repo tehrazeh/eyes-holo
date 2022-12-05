@@ -3,12 +3,14 @@ import { selectItemsByQuality } from "../../../../../Redux/slices/itemsSlice"
 import { Link } from "react-router-dom"
 import { link } from "../../../../../utils/constants"
 import styles from './QualityBlocks.module.scss'
+import { useDebounce } from '../../../../../utils/hooks/useDebounce'
 const QualityBlocks = (props) => {
 
   const items = useSelector(selectItemsByQuality(props.itemQuality))
   const {searchValue} = useSelector(state => state.filterItem)
+  const activeSearchValue = useDebounce(searchValue, 200)
   const itemElements = items.map((item) => {
-    if (item.dname.toLowerCase().includes(searchValue.toLowerCase())) {
+    if (item.dname.toLowerCase().includes(activeSearchValue.toLowerCase())) {
       return <div key={item.id} className={styles.element}><Link to={'/Items/' + item.id} key={item.id}>
       <img src={link + item.img} alt='item' />
       <p className={styles.element_title}>{item.dname}</p>

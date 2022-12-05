@@ -10,7 +10,6 @@ const filterItemsSlice = createSlice({
     reducers: {
         setSearchValue(state, action) {
             state.searchValue = action.payload
-            console.log('sisian ' + action.payload)
         },
         clearSearchValue(state) {
             state.searchValue = ''

@@ -7,6 +7,7 @@ import QualityBlocks from './qualityBlocks/QualityBlocks'
 import styles from './Items.module.scss'
 import { setSearchValue } from '../../../../Redux/slices/filterItemsSlice'
 const Items = () => {
+  
   const dispatch = useDispatch()
   const { status } = useSelector(state => state.item)
   const {searchValue} = useSelector(state => state.filterItem)

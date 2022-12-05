@@ -9,7 +9,6 @@ const HeroBlockByAttribute = (props) => {
     // get the array of heroes for specified attribute
     const heroes = useSelector(selectHeroByAttribute(props.attribute))
     const {searchValue, rolesFilter} = useSelector((state) => state.filterHero)
-
     const currentFilter = []
     for (let role in rolesFilter) { // get current filters of roles
         if (rolesFilter[role].isActive) {
