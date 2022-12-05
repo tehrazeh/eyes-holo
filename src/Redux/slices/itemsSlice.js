@@ -79,13 +79,28 @@ export const selectItemById = (itemId) => (state) => {
 
 export const selectItemsByQuality = (itemQuality) => (state) => {
     const filteredItems = []
+    const newItems = {...state.item.items}
+    for (let item in newItems) {
+
+        // for items that do not have quality property and skip items with undefined name
+        if (!state.item.items[item].hasOwnProperty('qual') && state.item.items[item].dname) {
+            newItems[item] = {...state.item.items[item]}
+            newItems[item].qual = 'unknown'
+        }
+        if (newItems[item].qual === itemQuality) {
+            filteredItems.push(newItems[item])
+        }
+    }
+    return filteredItems
+}
+// works, but try to find solution with less than x^2 complexity
+export const selectItemsWithoutQuality = () => (state) => {
+    const filteredItems = []
     for (let item in state.item.items) {
-        if (state.item.items[item].qual === itemQuality) {
+        if (!state.item.items[item].hasOwnProperty('qual')) {
             filteredItems.push(state.item.items[item])
         }
     }
-    // console.log(filteredItems)
-    return filteredItems
 }
 
 

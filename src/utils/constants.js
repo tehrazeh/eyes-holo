@@ -37,5 +37,5 @@ export const dotaRoles = [
 export const itemQualities = [
     "rare", "component",
     "artifact", "secret_shop",
-    "epic", "common" , "consumable"
+    "epic", "common" , "consumable", 'unknown'
 ]

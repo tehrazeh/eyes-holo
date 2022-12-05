@@ -16,6 +16,7 @@
 
 .rarityImg {
     width: 50px;
+    filter:brightness(0.7)
 }
 // CLASSES FOR RARITY
 .rare {
@@ -35,7 +36,7 @@
     }  
 }
 .common {
-    border: 3px solid rgba(136, 255, 52, 0.4);
+    border: 3px solid rgba(107, 255, 1, 0.4);
     border-radius: 5px;
     p, .elementTitle {
         filter:brightness(1.5);
@@ -72,6 +73,15 @@
     p, .elementTitle {
         filter:brightness(1.5);
         color: rgb(185, 178, 176)
+    }  
+}
+
+.unknown {
+    border: 3px solid rgba(255, 238, 0, 0.4);
+    border-radius: 5px;
+    p, .elementTitle {
+        filter:brightness(1.5);
+        color: rgb(255, 230, 1)
     }  
 }
 // -------------------
