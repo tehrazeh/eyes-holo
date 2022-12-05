@@ -26,7 +26,8 @@ const itemsSlice = createSlice({
             let componentCosts = 0
             if (action.payload.componentNames !== null) { // item has components
                 action.payload.componentNames.forEach(component => {
-                    if (!component.startsWith('recipe_')) { // for exceptions like dagon, necronomicon
+                    // for exceptions like dagon, necronomicon and items with '' in components array like trident
+                    if (!component.startsWith('recipe_') && component.length !== 0) {
                         componentElements.push(state.items[component])
                     }
                 })
@@ -92,15 +93,6 @@ export const selectItemsByQuality = (itemQuality) => (state) => {
         }
     }
     return filteredItems
-}
-// works, but try to find solution with less than x^2 complexity
-export const selectItemsWithoutQuality = () => (state) => {
-    const filteredItems = []
-    for (let item in state.item.items) {
-        if (!state.item.items[item].hasOwnProperty('qual')) {
-            filteredItems.push(state.item.items[item])
-        }
-    }
 }
 
 
