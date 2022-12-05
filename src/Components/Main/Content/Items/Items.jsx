@@ -5,7 +5,7 @@ import { fetchItems } from '../../../../Redux/slices/itemsSlice'
 import { itemQualities } from '../../../../utils/constants'
 import QualityBlocks from './qualityBlocks/QualityBlocks'
 import styles from './Items.module.scss'
-import { setSearchValue } from '../../../../Redux/slices/filterItemsSlice'
+import { setSearchValue, clearSearchValue } from '../../../../Redux/slices/filterItemsSlice'
 const Items = () => {
   
   const dispatch = useDispatch()
@@ -25,7 +25,7 @@ const Items = () => {
     <div>
       <input type='text' value={searchValue} onChange={(e) => {
         dispatch(setSearchValue(e.target.value))
-      }}></input>
+      }} placeholder='Enter Item...'></input>
     <div className={styles.itemsContainer}>
       {itemBlocks}
       </div>

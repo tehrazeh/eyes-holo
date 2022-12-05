@@ -4,7 +4,7 @@
     flex-direction: column;
     width: 45%;
     justify-content: flex-start;
-    background-color: rgb(22, 62, 49);
+    padding: 5px;
 }
 
 .elementTitle{
@@ -19,7 +19,7 @@
 }
 // CLASSES FOR RARITY
 .rare {
-    background-color: rgba(31, 61, 157, 0.25);
+    border: 3px solid rgba(31, 61, 157, 0.4);
     border-radius: 5px;
     p, .elementTitle {
         filter:brightness(1.5);
@@ -27,7 +27,7 @@
     }  
 }
 .consumable {
-    background-color: rgba(68, 187, 255, 0.25);
+    border: 3px solid rgba(68, 187, 255, 0.4);
     border-radius: 5px;
     p, .elementTitle {
         filter:brightness(1.5);
@@ -35,7 +35,7 @@
     }  
 }
 .common {
-    background-color: rgba(136, 255, 52, 0.25);
+    border: 3px solid rgba(136, 255, 52, 0.4);
     border-radius: 5px;
     p, .elementTitle {
         filter:brightness(1.5);
@@ -43,7 +43,7 @@
     }  
 }
 .epic {
-    background-color: rgba(144, 59, 190, 0.25);
+    border: 3px solid rgba(144, 59, 190, 0.4);
     border-radius: 5px;
     p, .elementTitle {
         filter:brightness(1.5);
@@ -51,7 +51,7 @@
     }  
 }
 .artifact {
-    background-color: rgba(255, 149, 0, 0.25);
+    border: 3px solid rgba(255, 149, 0, 0.4);
     border-radius: 5px;
     p, .elementTitle {
         filter:brightness(1.5);
@@ -59,7 +59,7 @@
     }  
 }
 .secret_shop {
-    background-color: rgba(184, 23, 8, 0.25);
+    border: 3px solid rgba(184, 23, 8, 0.4);
     border-radius: 5px;
     p, .elementTitle {
         filter:brightness(1.5);
@@ -67,7 +67,7 @@
     }  
 }
 .component {
-    background-color: rgba(202, 214, 215, 0.25);
+    border: 3px solid rgba(202, 214, 215, 0.4);
     border-radius: 5px;
     p, .elementTitle {
         filter:brightness(1.5);
@@ -115,7 +115,6 @@
         text-decoration: none;
         font-size: 0.7em;
         letter-spacing: 0.05em;
-        // color:aliceblue;
         font-weight: lighter;
         opacity: 0;
     }

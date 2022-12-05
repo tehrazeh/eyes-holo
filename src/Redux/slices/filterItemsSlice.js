@@ -17,6 +17,6 @@ const filterItemsSlice = createSlice({
     }
 })
 
-export const {setSearchValue} = filterItemsSlice.actions
+export const {setSearchValue, clearSearchValue} = filterItemsSlice.actions
 
 export default filterItemsSlice.reducer

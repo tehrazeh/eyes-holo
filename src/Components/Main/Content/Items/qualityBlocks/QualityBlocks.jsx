@@ -7,26 +7,38 @@ import { useDebounce } from '../../../../../utils/hooks/useDebounce'
 const QualityBlocks = (props) => {
 
   const items = useSelector(selectItemsByQuality(props.itemQuality))
-  const {searchValue} = useSelector(state => state.filterItem)
+  const { searchValue } = useSelector(state => state.filterItem)
   const activeSearchValue = useDebounce(searchValue, 200)
-  const itemElements = items.map((item) => {
+
+
+  // use reduce instead of map to end up having empty array if filter input
+  // does not satisfy any elements. then check for length and not render if empty
+  const itemElements = items.reduce((acc, item) => { // to
     if (item.dname.toLowerCase().includes(activeSearchValue.toLowerCase())) {
-      return <div key={item.id} className={styles.element}><Link to={'/Items/' + item.id} key={item.id}>
-      <img src={link + item.img} alt='item' />
-      <p className={styles.element_title}>{item.dname}</p>
-    </Link>
-    </div>
+      acc.push(
+      <div key={item.id} className={styles.element}>
+        <Link to={'/Items/' + item.id} key={item.id}>
+          <img src={link + item.img} alt='item' />
+          <p className={styles.element_title}>{item.dname}</p>
+        </Link>
+      </div>)
     }
-  })
+    return acc
+  }, [])
+
+  // not render at all if empty
+  if (itemElements.length < 1) {
+    return null
+  }
   return (
     <div className={`${styles.elementSection} ${styles[props.itemQuality]}`}>
       <div className={styles.elementTitle}>
-        <img className={styles.rarityImg} src={require(`../../../../../Assets/Rarity/${props.itemQuality}.png`)}/>
+        <img className={styles.rarityImg} src={require(`../../../../../Assets/Rarity/${props.itemQuality}.png`)} />
         <span>{props.itemQuality}</span>
       </div>
       <div className={styles.elementsBlock}>
         {itemElements}
-      </div>   
+      </div>
     </div>
   )
 }
