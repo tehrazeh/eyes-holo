@@ -12,6 +12,7 @@ export const fetchItems = createAsyncThunk('hero/fetchAllitems', async () => {
 const initialState = {
     items: {},
     itemComponents: [],
+    itemEntities: [],
     itemRecipe: null,
     status: 'loading', // loading, loaded, error
     link: 'https://api.opendota.com'
@@ -51,6 +52,14 @@ const itemsSlice = createSlice({
                 state.itemRecipe = null
             }
 
+        },
+        setEntities(state, action) {
+            state.itemEntities = []
+            for (let item in state.items) {
+                if (state.items[item].components?.includes(action.payload)) {
+                    state.itemEntities.push(state.items[item])
+                }
+            }
         }
     },
     extraReducers: (builder) => {
@@ -96,6 +105,6 @@ export const selectItemsByQuality = (itemQuality) => (state) => {
 }
 
 
-export const { setComponents } = itemsSlice.actions
+export const { setComponents, setEntities } = itemsSlice.actions
 
 export default itemsSlice.reducer

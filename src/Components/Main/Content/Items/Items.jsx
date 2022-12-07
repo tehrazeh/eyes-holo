@@ -15,8 +15,10 @@ const Items = () => {
     return <QualityBlocks itemQuality={quality} key={quality}/>
   })
   useEffect(() => {
-    dispatch(fetchItems())
-  }, [dispatch])
+    if (status !== 'loaded') {
+      dispatch(fetchItems())
+    }   
+  }, [dispatch, status])
 
   if (status === 'loading') {
     return <>Zagruzka...😎</>
