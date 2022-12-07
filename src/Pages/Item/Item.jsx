@@ -3,8 +3,11 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { fetchItems, selectItemById } from '../../Redux/slices/itemsSlice'
+import Description from './components/Description/Description'
 import Entities from './components/Entities/Entities'
 import Parts from './components/Parts/Parts'
+import Profile from './components/Profile/Profile'
+import styles from './Item.module.scss'
 
 const Item = () => {
   const { id } = useParams() // id from the search bar
@@ -27,11 +30,11 @@ const Item = () => {
   }
 
   return (
-    <div>
-      <div>Item: {itemStats.dname}</div>
-      <div>Cost: {itemStats.cost}</div>
-      <Parts item={item} />
-      <Entities item={item} />
+    <div className={styles.itemContainer}>
+      <Profile itemStats={itemStats}/>
+      <Description itemStats={itemStats}/>
+      {/* <Parts item={item} />
+      <Entities item={item} /> */}
     </div>
   )
 }

@@ -22,7 +22,6 @@ export const Parts = (props) => {
             itemCost: itemStats.cost, itemName: itemStats.dname }))
     }, [dispatch, itemStats])
 
-
     if (componentElements.length < 1) {
         return null
     }
