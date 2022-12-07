@@ -5,7 +5,7 @@ import Main from './Components/Main/Main'
 import Items from './Components/Main/Content/Items/Items';
 import Heroes from './Components/Main/Content/Heroes/Heroes';
 import Hero from './Pages/Hero/Hero';
-import Item from './Pages/Item'
+import Item from './Pages/Item/Item'
 import { Routes, Route } from 'react-router-dom';
 import Roles from './Pages/Roles/Roles';
 
