@@ -9,13 +9,12 @@ const Lore = (props) => {
   return (
     <div className={styles.lore}>
       <div>
-        <img src={loreImg} />
+        <img src={loreImg} alt='lore'/>
         <p>Lore</p>
       </div>
       <div>
         {lore}
       </div>
-
     </div>
   )
 }

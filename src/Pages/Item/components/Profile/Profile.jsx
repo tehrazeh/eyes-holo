@@ -1,16 +1,44 @@
-
+import styles from './Profile.module.scss'
+import { link } from '../../../../utils/constants'
 
 const Profile = ({ itemStats }) => {
     return (
-        <div>
-            <div>Item: {itemStats.dname}</div>
-            <div>Cost: {itemStats.cost}</div>
-            <div>Quality: {itemStats.qual ? itemStats.qual : 'unknown'}</div>
-            <div>Lore: {itemStats.lore}</div>
-            <div>
-                {itemStats.mc && <span>Mana {itemStats.mc}</span>}
-                {itemStats.cd && <span>Cooldown {itemStats.cd}</span>}
+        <div className={styles.itemProfile}>
+            <div className={styles.itemProfile_top}>
+                <img src={link + itemStats.img} alt='hero icon' />
+                <div className={styles.itemProfile_top_stats}>
+                    <p>{itemStats.dname}</p>
+                    <div>
+                        <img className={styles.cost} src={require('../../../../Assets/Item/cost.png')} alt='cost' />
+                        <span>{itemStats.cost}</span>
+                    </div>
+                    <div className={styles.cooldown}>
+                        {itemStats.mc && <div>
+                            <div className={styles.cooldown_imgBlock}>
+                                <img src={require('../../../../Assets/Item/mc.png')} alt='mana' />
+                                <p className={styles.tooltip}>Mana Cost</p>
+                            </div>
+                            <span>{itemStats.mc}</span>
+                        </div>}
+                        {itemStats.cd && <div><div className={styles.cooldown_imgBlock}>
+                            <img src={require('../../../../Assets/Item/cd.png')} alt='cooldown' />
+                            <p className={styles.tooltip}>Cooldown</p>
+                        </div>
+                            <span>{itemStats.cd}</span>
+                        </div>}
+                    </div>
+                </div>
             </div>
+            <div className={styles.lore}>
+                <div>
+                    <img src={require('../../../../Assets/Hero/lore.png')} alt='lore'/>
+                    <p>Lore</p>
+                </div>
+                <div>
+                    {itemStats.lore}
+                </div>
+            </div>
+
         </div>
     )
 }

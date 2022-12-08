@@ -1,0 +1,117 @@
+.itemProfile {
+    background-color: rgb(9, 12, 20);
+    border-radius: 5px;
+    padding: 10px;
+    &_top {
+        background-color: rgb(31, 31, 55);
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+        font-weight: 350;
+        font-size: 1.2em;
+
+        p {
+            font-weight: 400;
+            font-size: 1.4;
+            margin: 10px;
+        }
+        img {
+            width: 120px;
+            border-radius: 5px;
+        }
+
+        &_stats {
+            padding: 10px;
+            img {
+                width: 25px;
+            }
+
+            .cost {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .cooldown {
+        display: flex;
+        justify-content: center;
+        & > :first-child, > :last-child {
+            display: flex;
+            margin: 10px;
+            align-items: center;
+        }
+
+        &_imgBlock{   
+            display: flex;
+            margin: 10px;
+            position: relative;
+            img:hover {
+                filter: brightness(1.2);
+            }
+            .tooltip {
+                position: absolute;
+                background-color: rgb(9, 12, 20);
+                padding: 0.3em;
+                font-weight: 200;
+                font-size: 0.8em;
+                border-radius: 3px;
+                left: 50%;
+                top: 25px;
+                width: max-content;
+                transform: translateX(-64%);
+                display: none;
+                
+            }
+
+            .tooltip::before{
+                content: '';
+                position: absolute;
+                top: -35%;
+                left: 50%;
+                transform: translateX(-50%);
+                border-width: 5px;
+                border-style: solid;
+                border-color:  transparent transparent rgb(9, 12, 20) transparent;   
+            }
+        }
+
+        &_imgBlock:hover {
+            .tooltip {
+                display: block;
+            }
+        }
+    }
+
+    .rarity {
+        width: 45px;
+    }
+
+    .lore {
+        margin-top: 10px;
+        border-radius: 5px;
+        line-height: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: rgb(31, 31, 55);
+        padding: 0 20px;
+        font-weight: 200;
+        color: rgb(190, 193, 221);
+    
+        p {
+            margin: 8px;
+        }
+    
+        img {
+            width: 40px;
+        }
+    
+        & > :first-child {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
