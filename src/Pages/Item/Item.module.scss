@@ -1,7 +1,12 @@
 .itemContainer {
     display: flex;
     width: 90%;
+    justify-content: space-evenly;
     margin: 0 auto;
     background-color: rgb(1, 46, 31);
-    height: 100%;
+
+    & > * {
+        margin: 10px;
+        width: 50%;
+    }
 }

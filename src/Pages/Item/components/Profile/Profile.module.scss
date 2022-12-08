@@ -2,7 +2,12 @@
     background-color: rgb(9, 12, 20);
     border-radius: 5px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     &_top {
+        width: 100%;
         background-color: rgb(31, 31, 55);
         border-radius: 5px;
         display: flex;
@@ -11,6 +16,7 @@
         padding: 20px;
         font-weight: 350;
         font-size: 1.2em;
+        height: 48%;
 
         p {
             font-weight: 400;
@@ -89,6 +95,8 @@
     }
 
     .lore {
+        height: 48%;
+        width: 100%;
         margin-top: 10px;
         border-radius: 5px;
         line-height: 2em;
@@ -96,12 +104,15 @@
         flex-direction: column;
         justify-content: flex-start;
         background-color: rgb(31, 31, 55);
-        padding: 0 20px;
+        padding: 20px;
         font-weight: 200;
+        font-size: 1.2em;
         color: rgb(190, 193, 221);
     
         p {
             margin: 8px;
+            font-weight: 400;
+            font-size: 1.2em;
         }
     
         img {

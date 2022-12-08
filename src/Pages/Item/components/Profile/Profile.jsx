@@ -8,10 +8,12 @@ const Profile = ({ itemStats }) => {
                 <img src={link + itemStats.img} alt='hero icon' />
                 <div className={styles.itemProfile_top_stats}>
                     <p>{itemStats.dname}</p>
+                    { itemStats.cost > 0 &&
                     <div>
                         <img className={styles.cost} src={require('../../../../Assets/Item/cost.png')} alt='cost' />
                         <span>{itemStats.cost}</span>
                     </div>
+                    }
                     <div className={styles.cooldown}>
                         {itemStats.mc && <div>
                             <div className={styles.cooldown_imgBlock}>
