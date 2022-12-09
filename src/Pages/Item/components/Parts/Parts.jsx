@@ -33,9 +33,9 @@ export const Parts = (props) => {
     }
 
   return (
-    <div className={styles.partsContainer}>
+    <div className={styles.container}>
       <p>Item Components:</p> 
-      <div className={styles.partsContainer_parts}>{componentElements}
+      <div className={styles.container_items}>{componentElements}
         {itemRecipe && <div>
           <div className = {styles.costBlock}>
             <img  className = {styles.costImage} src = {costImage} alt ='cost'/>

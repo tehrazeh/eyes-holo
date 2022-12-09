@@ -34,7 +34,7 @@ const Item = () => {
       <Profile itemStats={itemStats}/>
       <Description itemStats={itemStats}/>
       <Parts item={item} />
-      {/* <Entities item={item} /> */}
+      <Entities item={item} />
     </div>
   )
 }

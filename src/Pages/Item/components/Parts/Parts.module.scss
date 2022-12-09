@@ -1,4 +1,4 @@
-.partsContainer {
+.container {
     display: flex;
     flex-direction: column;
     font-weight: 300;
@@ -9,11 +9,12 @@
     padding: 10px;
 
 
-    &_parts {
+    &_items {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         padding: 10px;
+        flex-wrap: wrap;
 
         & > * {
             background-color: rgb(31, 31, 55);
