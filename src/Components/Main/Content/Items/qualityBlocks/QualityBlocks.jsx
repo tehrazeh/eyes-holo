@@ -26,19 +26,19 @@ const QualityBlocks = (props) => {
     return acc
   }, [])
 
-  // not render at all if empty
-  if (itemElements.length < 1) {
-    return null
-  }
+  console.log('rerender ' + props.itemQuality)
   return (
     <div className={`${styles.elementSection} ${styles[props.itemQuality]}`}>
       <div className={styles.elementTitle}>
         <img className={styles.rarityImg} src={require(`../../../../../Assets/Rarity/${props.itemQuality}.png`)} />
         <span>{props.itemQuality}</span>
       </div>
+      { itemElements.length > 1 ?
       <div className={styles.elementsBlock}>
         {itemElements}
       </div>
+      : <p>Ooops... nothing</p>
+      }
     </div>
   )
 }

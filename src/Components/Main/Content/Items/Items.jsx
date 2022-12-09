@@ -25,9 +25,17 @@ const Items = () => {
   }
   return (
     <div>
-      <input type='text' value={searchValue} onChange={(e) => {
-        dispatch(setSearchValue(e.target.value))
-      }} placeholder='Enter Item...'></input>
+      <div className={styles.inputContainer}>
+        <img className={styles.searchIcon} src={require(`../../../../Assets/Input/search.png`)}
+          alt='search' />
+        <input
+          value={searchValue}
+          onChange={(event) => dispatch(setSearchValue(event.target.value))}
+          placeholder="Search Item..." />
+        {searchValue &&
+          <img className={styles.clearIcon} src={require(`../../../../Assets/Input/clear.png`)}
+            alt='clear' onClick={() => dispatch(clearSearchValue())} />}
+      </div>
     <div className={styles.itemsContainer}>
       {itemBlocks}
       </div>
