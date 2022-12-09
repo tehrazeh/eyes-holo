@@ -33,8 +33,8 @@ const Item = () => {
     <div className={styles.itemContainer}>
       <Profile itemStats={itemStats}/>
       <Description itemStats={itemStats}/>
-      {/* <Parts item={item} />
-      <Entities item={item} /> */}
+      <Parts item={item} />
+      {/* <Entities item={item} /> */}
     </div>
   )
 }

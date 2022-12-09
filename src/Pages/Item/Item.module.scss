@@ -3,10 +3,11 @@
     width: 90%;
     justify-content: space-evenly;
     margin: 0 auto;
+    flex-wrap: wrap;
     background-color: rgb(1, 46, 31);
 
     & > * {
         margin: 10px;
-        width: 50%;
+        width: 48%;
     }
 }
