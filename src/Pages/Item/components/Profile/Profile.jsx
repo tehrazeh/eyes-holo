@@ -37,7 +37,9 @@ const Profile = ({ itemStats }) => {
                     <p>Lore</p>
                 </div>
                 <div>
-                    {itemStats.lore}
+                    {itemStats.lore ? itemStats.lore : 
+                    'Mysterious artifact, history of origin is unknown...'
+                    }
                 </div>
             </div>
 

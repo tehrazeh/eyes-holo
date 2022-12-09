@@ -1,4 +1,6 @@
 import styles from './Description.module.scss'
+import fallback from '../../../../Assets/fallback.png'
+
 const Description = ({ itemStats }) => {
 
     // attributes that item gives
@@ -9,21 +11,46 @@ const Description = ({ itemStats }) => {
         })
     }
 
+
     // hints on how to use this item
     let hints = []
     if (itemStats?.hint?.length > 0) {
         hints = itemStats.hint.map((hint, index) => {
+
             const [title, ...description] = hint.split(':')
-            return <div key={index}>
-                <div className = {styles.usage}>
-                {title && 
-                <img src={require(`../../../../Assets/Item/${title.toLowerCase()}.png`)}
-                className = {styles.usage_image}
-                 alt='usage'/>}
-                <p>{title + ':'}</p>
-                </div>
+            if (description.length < 1) { // cases when there is no split happening
+                return <div key={index}>
+                {title &&
+                    <div className = {styles.usage}>          
+                        <img // check on if we have img or not
+                        src={ (title.toLowerCase() === 'active' ||
+                        title.toLowerCase() === 'passive') ?
+                            require(`../../../../Assets/Item/${title.toLowerCase()}.png`) :
+                            fallback
+                        }                     
+                        className = {styles.usage_image}
+                        alt='usage'/>
+                        <span>{title}</span>
+                    </div>}
+            </div>
+            } else { // when split has happened, we have both title and description
+                return <div key={index}>
+                {title &&
+                    <div className = {styles.usage}>          
+                        <img 
+                        src={ (title.toLowerCase() === 'active' ||
+                        title.toLowerCase() === 'passive') ?
+                            require(`../../../../Assets/Item/${title.toLowerCase()}.png`) :
+                            fallback
+                        }                     
+                        className = {styles.usage_image}
+                        alt='usage'/>
+                        <p>{title + ':'}</p>
+                    </div>}
                 <span>{description}</span>
             </div>
+            }
+
         })
     }
     return (

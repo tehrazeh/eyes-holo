@@ -11,7 +11,6 @@
     color: rgb(190, 193, 221);
 
     p {
-        font-weight: 400;
         font-size: 1.2em;
     }
     div {
@@ -41,8 +40,13 @@
 
     .usage {
         display: flex;
+        align-items: flex-start;
         &_image {
             width: 30px;
         }
+        p, span {
+            margin-left: 8px;
+        }
+
     }
 }
