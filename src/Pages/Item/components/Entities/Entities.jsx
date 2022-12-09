@@ -5,6 +5,7 @@ import { setEntities } from "../../../../Redux/slices/itemsSlice"
 import { link } from "../../../../utils/constants"
 import styles from '../Parts/Parts.module.scss'
 import costImage from '../../../../Assets/Item/cost.png'
+import entitiesImage from '../../../../Assets/Item/entities.png'
 
 export const Entities = (props) => {
     const dispatch = useDispatch()
@@ -32,7 +33,10 @@ export const Entities = (props) => {
 
   return (
         <div className={styles.container}>
+          <div className={styles.container_title}>
+          <img className={styles.titleImage} src={entitiesImage} alt= 'part of'/>
           <p>Part of:</p>
+          </div>
           <div className={styles.container_items}>
             {entityElements}
           </div> 

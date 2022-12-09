@@ -5,6 +5,7 @@ import { setComponents } from "../../../../Redux/slices/itemsSlice"
 import { link } from "../../../../utils/constants"
 import styles from './Parts.module.scss'
 import costImage from '../../../../Assets/Item/cost.png'
+import entitiesImage from '../../../../Assets/Item/components.png'
 
 export const Parts = (props) => {
     const dispatch = useDispatch()
@@ -34,7 +35,10 @@ export const Parts = (props) => {
 
   return (
     <div className={styles.container}>
-      <p>Item Components:</p> 
+      <div className={styles.container_title}>
+        <img className={styles.titleImage} src={entitiesImage} alt= 'part of'/>
+        <p>Item Components:</p>
+      </div>
       <div className={styles.container_items}>{componentElements}
         {itemRecipe && <div>
           <div className = {styles.costBlock}>
