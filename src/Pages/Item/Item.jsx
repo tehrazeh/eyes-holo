@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { fetchItems, selectItemById } from '../../Redux/slices/itemsSlice'
 import Description from './components/Description/Description'
 import Entities from './components/Entities/Entities'
@@ -30,11 +30,19 @@ const Item = () => {
   }
 
   return (
-    <div className={styles.itemContainer}>
+    <div>
+      <div className={styles.header}>
+        <p>
+          <Link to='/Items'>Items </Link>
+          <b>{`> ${itemStats.dname}`}</b>
+        </p>
+      </div>
+    <div className={styles.itemContainer}>   
       <Profile itemStats={itemStats}/>
       <Description itemStats={itemStats}/>
       <Parts item={item} />
       <Entities item={item} />
+    </div>
     </div>
   )
 }
