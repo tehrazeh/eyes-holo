@@ -26,7 +26,6 @@ const QualityBlocks = (props) => {
     return acc
   }, [])
 
-  console.log('rerender ' + props.itemQuality)
   return (
     <div className={`${styles.elementSection} ${styles[props.itemQuality]}`}>
       <div className={styles.elementTitle}>

@@ -15,7 +15,6 @@ const HeroBlockByAttribute = (props) => {
             currentFilter.push(role)
         }
     }
-
     // if input has part of the name of the hero
     const checkNameFilter = (name) => name.toLowerCase().includes(searchValue.toLowerCase())
 
