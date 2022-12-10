@@ -1,0 +1,12 @@
+.range {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    align-items: center;
+    background-color: rgb(20, 41, 41);
+    width: 80%;
+    &_scroll {
+        width: 80%;
+        background-color: gold;
+    }
+}

@@ -4,6 +4,7 @@ import item from './slices/itemsSlice'
 import ability from './slices/abilitiesSlice'
 import filterHero from './slices/filterHeroesSlice'
 import filterItem from "./slices/filterItemsSlice";
+import heroStats from "./slices/heroStatsSlice";
 
 const store = configureStore({
     reducer: {
@@ -11,7 +12,8 @@ const store = configureStore({
         item,
         ability,
         filterHero,
-        filterItem
+        filterItem,
+        heroStats
     }
 })
 

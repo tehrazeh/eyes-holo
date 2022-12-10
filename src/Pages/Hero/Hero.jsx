@@ -9,6 +9,7 @@ import Stats from './components/Stats/Stats'
 import Profile from './components/Profile/Profile'
 import Abilities from './components/Abilities/Abilities'
 import Lore from './components/Lore/Lore'
+import LevelScroll from './components/LevelScroll/LevelScroll'
 
 const Hero = () => {
   const { id } = useParams() // id from the search bar
@@ -21,6 +22,7 @@ const Hero = () => {
     }
   }, [hero, dispatch]) // hook dependent on hero
 
+
   if (statusHero === 'loading') { // wait for hero to load
     return <div>Zagruzka...😎</div>
   }
@@ -31,6 +33,7 @@ const Hero = () => {
         <Link to='/Heroes'>Heroes</Link> {' > '}
         <img src={link + hero.icon} alt='hero icon' />
       </div>
+      <LevelScroll hero={hero}/>
       <div className={styles.hero_overview}>
         <Profile hero={hero}/>
         <Stats hero={hero}/>
