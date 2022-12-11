@@ -58,3 +58,17 @@
         opacity: 0.5;
     }
 }
+
+@media screen and (max-width: 400px) {
+
+    .header{
+        flex-direction: column;
+
+        input {
+            width: 220px;
+        }
+        &_rolesContainer {
+            margin: 10px;
+        }
+    }
+}

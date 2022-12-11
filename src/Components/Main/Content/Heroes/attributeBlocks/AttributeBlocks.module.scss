@@ -86,3 +86,42 @@
 }
 
 
+@media screen and (max-width: 800px) {
+    .heroBlock {
+        width: 15%;
+        max-width: 16%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .heroBlock {
+        width: 18%;
+        max-width: 19%;
+    }
+}
+@media screen and (max-width: 500px) {
+
+    .heroesBlock {
+        justify-content: center;
+    }
+    .heroBlock {
+        width: 22.5%;
+        max-width: 23%;
+    }
+}
+@media screen and (max-width: 350px) {
+
+    .heroBlock {
+        width: 30%;
+        max-width: 31%;
+    }
+}
+@media screen and (max-width: 280px) {
+    .heroesBlock {
+        justify-content: space-evenly;
+    }
+
+    .heroBlock {
+        width: 40%;
+        max-width: 42%;
+    }
+}
