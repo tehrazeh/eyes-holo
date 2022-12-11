@@ -38,7 +38,6 @@ const Stats = (props) => {
                 <h2>Attack</h2>
                 </div>
                 <div>
-                    {/* <span>Damage: {hero.base_attack_min} - {hero.base_attack_max}</span> */}
                     <span>Damage: {calculateDamage(
                         hero?.[`base_${hero?.primary_attr}`],
                         hero?.[`${hero?.primary_attr}_gain`],

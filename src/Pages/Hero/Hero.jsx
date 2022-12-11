@@ -33,9 +33,10 @@ const Hero = () => {
         <Link to='/Heroes'>Heroes</Link> {' > '}
         <img src={link + hero.icon} alt='hero icon' />
       </div>
-      <LevelScroll hero={hero}/>
+      
       <div className={styles.hero_overview}>
         <Profile hero={hero}/>
+        <LevelScroll hero={hero}/>
         <Stats hero={hero}/>
         <Lore hero={hero}/>
       </div>
