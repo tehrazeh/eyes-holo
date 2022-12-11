@@ -26,7 +26,7 @@ const Item = () => {
 
 
   if (status === 'loading') { // loading, either page was refreshed or waiting for request
-    return <>Zagruzka...😎</>
+    return <>Loading...</>
   }
 
   return (

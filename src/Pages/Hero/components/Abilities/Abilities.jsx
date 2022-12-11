@@ -12,7 +12,7 @@ export const Abilities = (props) => {
     }, [hero, dispatch])
 
     if (statusAbilities === 'loading') {
-        return <div>Zagruzka...😎</div>
+        return <div>Loading...</div>
       }
 
     const abilities = heroAbilities?.map((ability, index) => { // get the abilities

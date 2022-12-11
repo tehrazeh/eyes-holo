@@ -24,7 +24,7 @@ const Hero = () => {
 
 
   if (statusHero === 'loading') { // wait for hero to load
-    return <div>Zagruzka...😎</div>
+    return <div>Loading...</div>
   }
 
   return (
