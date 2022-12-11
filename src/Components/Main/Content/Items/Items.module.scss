@@ -1,3 +1,4 @@
+
 .itemsContainer {
     display: flex;
     flex-wrap: wrap;
@@ -44,4 +45,20 @@
             cursor: pointer;
         }
     }
+}
+
+@media screen and (max-width: 280px) {
+    .inputContainer{
+        input {
+            width: 80%;
+        }
+
+        .searchIcon {
+            left: 35px;
+        }
+    
+        .clearIcon {
+            right: 35px;
+        }
+    } 
 }

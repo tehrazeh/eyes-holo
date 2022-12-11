@@ -1,8 +1,8 @@
 .elementSection {
-    margin: 20px 10px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 47%;
     justify-content: flex-start;
     padding: 5px;
 }
@@ -88,6 +88,7 @@
 .elementsBlock {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .elementTitle {
@@ -100,8 +101,8 @@
     flex-grow: 1;
     border-radius: 3px;
     margin: 4px;
-    width: 70px;
-    max-width: 80px;
+    width: 65px;
+    max-width: 75px;
     position: relative;
     transition: 0.2s ease-in-out;
     img {
@@ -132,3 +133,87 @@
         opacity: 1;
     }
 }
+
+@media screen and (max-width: 830px) {
+    .element {
+        width: 22%;
+        max-width: 23%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .elementSection {
+        margin: 8px;
+        width: 45%;
+        padding: 5px;
+    }
+    .element {
+        width: 30%;
+        max-width: 31%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .elementSection {
+        width: 90%;
+    }
+    .element {
+        width: 17%;
+        max-width: 18%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .elementSection {
+        width: 95%;
+    }
+    .element {
+        width: 21%;
+        max-width: 22%;
+    }
+}
+@media screen and (max-width: 300px) {
+
+    .element {
+        width: 28%;
+        max-width: 29%;
+    }
+}
+
+
+// @media screen and (max-width: 800px) {
+//     .heroBlock {
+//         width: 15%;
+//         max-width: 16%;
+//     }
+// }
+// @media screen and (max-width: 600px) {
+//     .heroBlock {
+//         width: 18%;
+//         max-width: 19%;
+//     }
+// }
+// @media screen and (max-width: 500px) {
+
+//     .heroesBlock {
+//         justify-content: center;
+//     }
+//     .heroBlock {
+//         width: 22.5%;
+//         max-width: 23%;
+//     }
+// }
+// @media screen and (max-width: 350px) {
+
+//     .heroBlock {
+//         width: 30%;
+//         max-width: 31%;
+//     }
+// }
+// @media screen and (max-width: 280px) {
+//     .heroesBlock {
+//         justify-content: space-evenly;
+//     }
+
+//     .heroBlock {
+//         width: 40%;
+//         max-width: 42%;
+//     }
+// }

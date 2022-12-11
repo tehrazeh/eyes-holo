@@ -65,6 +65,17 @@
             }
         }
     
-    }
+    } 
+}
+@media screen and (max-width: 400px) {
+
+    .Header {
+        .logo {
+            width: 30%;
+        }
     
+        .buttons {
+            width: 70%;
+        }
+    }   
 }
