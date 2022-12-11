@@ -1,49 +1,83 @@
 .homeContainer {
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 
-    img {
-        width: 240px;
-        border-radius: 10px;
+  img {
+    width: 240px;
+    border-radius: 10px;
+  }
+
+  p {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 2.5em;
+    margin: 15px;
+    color: rgb(190, 193, 221);
+  }
+
+  button {
+    color: rgb(112, 116, 148);
+    transition: 0.25s;
+    width: 200px;
+    border: 2px solid rgb(112, 116, 148);
+    margin: 40px;
+    padding: 40px;
+    border-radius: 2px;
+    background: none;
+    font-size: 1.5em;
+
+    &:hover,
+    &:focus {
+      border-color: rgb(190, 193, 221);
+      color: rgb(190, 193, 221);
     }
+  }
 
-    p {
-        text-transform: uppercase;
-        font-weight: 300;
-        font-size: 2.5em;
-        margin: 15px;
-        color: rgb(190, 193, 221);
+  .pulse:hover {
+    cursor: pointer;
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em transparent;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 adjust-hue(rgb(112, 116, 148), 45deg);
     }
-
-    button {  
-        color: rgb(112, 116, 148);  
-        transition: 0.25s;
-        width: 200px;
-        border: 2px solid rgb(112, 116, 148);
-        margin: 40px;
-        padding: 40px;
-        border-radius: 2px;
-        background: none;
-        font-size: 1.5em;
-        &:hover,
-        &:focus { 
-          border-color: rgb(190, 193, 221);   
-          color: rgb(190, 193, 221);
-        }
-      }
-
-    .pulse:hover{
-        cursor: pointer;
-        animation: pulse 1s;
-        box-shadow: 0 0 0 2em transparent;
-    }
-
-    @keyframes pulse {
-        0% { box-shadow: 0 0 0 0 adjust-hue(rgb(112, 116, 148), 45deg); }
-      }
+  }
 }
 
+
+@media screen and (max-width: 800px) {
+  .homeContainer {
+    p {
+      font-weight: 200;
+      font-size: 2em;
+      margin: 5px;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .homeContainer {
+    p {
+      font-weight: 200;
+      font-size: 1.2em;
+      margin: 2px;
+    }
+
+    img {
+      width: 200px;
+      margin: 20px;
+    }
+
+    button {
+      width: 100px;
+      margin: 10px;
+      padding: 10px;
+      font-size: 1.2em;
+    }
+  }
+}
