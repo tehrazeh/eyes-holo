@@ -13,32 +13,32 @@ const QualityBlocks = (props) => {
 
   // use reduce instead of map to end up having empty array if filter input
   // does not satisfy any elements. then check for length and not render if empty
-  // const itemElements = items.reduce((acc, item) => {
-  //   console.log(item.dname.toLowerCase())
-  //   if (item.dname.toLowerCase().includes(searchValue.toLowerCase())) { // active for debounce
-  //     acc.push(
-  //     <div key={item.id} className={styles.element}>
-  //       <Link to={'/Items/' + item.id} key={item.id}>
-  //         <img src={link + item.img} alt='item' />
-  //         <p className={styles.element_title}>{item.dname}</p>
-  //       </Link>
-  //     </div>)
-  //   }
-  //   return acc
-  // }, [])
+  const itemElements = items.reduce((acc, item) => {
+    console.log(item.dname.toLowerCase())
+    if (item.dname.toLowerCase().includes(searchValue.toLowerCase())) { // active for debounce
+      acc.push(
+      <div key={item.id} className={styles.element}>
+        <Link to={'/Items/' + item.id} key={item.id}>
+          <img src={link + item.img} alt='item' />
+          <p className={styles.element_title}>{item.dname}</p>
+        </Link>
+      </div>)
+    }
+    return acc
+  }, [])
 
-    const itemElements = items.map(item => {
-      if (item.dname.toLowerCase().includes(activeSearchValue.toLowerCase())) {
-            return (
-            <div key={item.id} className={styles.element}>
-              <Link to={'/Items/' + item.id} key={item.id}>
-                <img src={link + item.img} alt='item' />
-                <p className={styles.element_title}>{item.dname}</p>
-              </Link>
-            </div>)
-    }})
+    // const itemElements = items.map(item => {
+    //   if (item.dname.toLowerCase().includes(activeSearchValue.toLowerCase())) {
+    //         return (
+    //         <div key={item.id} className={styles.element}>
+    //           <Link to={'/Items/' + item.id} key={item.id}>
+    //             <img src={link + item.img} alt='item' />
+    //             <p className={styles.element_title}>{item.dname}</p>
+    //           </Link>
+    //         </div>)
+    // }})
 
-    const filteredItems = itemElements.filter(item => item !== undefined) // to be able to display emty blocks
+    // const filteredItems = itemElements.filter(item => item !== undefined) // to be able to display emty blocks
 
   return (
     <div className={`${styles.elementSection} ${styles[props.itemQuality]}`}>
@@ -47,7 +47,7 @@ const QualityBlocks = (props) => {
         alt ='rarity'/>
         <span>{props.itemQuality}</span>
       </div>
-      { filteredItems.length > 1 ?
+      { itemElements.length >= 1 ?
       <div className={styles.elementsBlock}>
         {itemElements}
       </div>
