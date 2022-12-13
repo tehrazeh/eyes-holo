@@ -15,15 +15,16 @@ const Profile = (props) => {
                 <p className={styles[hero?.primary_attr]}>Primary: {attributeFullName[hero?.primary_attr]}</p>
                 <p>Attack type: 
                     <img className={styles.attackType}
-                    src={require(`../../../../Assets/Hero/${hero?.attack_type.toLowerCase()}.png`)} />
-                    {hero?.attack_type}
+                    src={require(`../../../../Assets/Hero/${hero?.attack_type.toLowerCase()}.png`)} alt='attackType'/>
+                    <span>{hero?.attack_type}</span>
                 </p>
                 <div className={styles.rolesTitle}>
                     <p>Roles</p>
-                    <Link to='/Roles'><img src={require(`../../../../Assets/Misc/info.png`)}/></Link>
+                    <Link to='/Roles'><img src={require(`../../../../Assets/Misc/info.png`)} alt='info'/></Link>
                 </div>
-                {roles}
-                
+                <div className={styles.roles}>
+                    {roles}
+                </div>               
             </div>
         </div>
     )

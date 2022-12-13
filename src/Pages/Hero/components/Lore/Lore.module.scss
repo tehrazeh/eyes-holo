@@ -11,7 +11,7 @@
     color: rgb(190, 193, 221);
 
     p {
-        margin: 8px;
+        margin: 5px 12px;
     }
 
     img {
@@ -22,4 +22,41 @@
         display: flex;
         justify-content: center;
     }
+
+    .visible {
+        display: block;
+    }
+
+    .invisible {
+        display: none;
+    }
+
+    &_title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .visibility {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            height: 28px;
+            padding: 4px;
+            background-color: rgb(67, 69, 87);
+            border: none;
+            transition: 0.2s ease-in-out;
+            img {
+                width: 20px;
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(161, 164, 196);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 930px) {
+
 }

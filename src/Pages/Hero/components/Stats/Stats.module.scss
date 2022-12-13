@@ -59,3 +59,66 @@
         }
     }
 }
+
+@media screen and (max-width: 1350px) {
+    .stats { 
+        .statsBlock {
+            margin: 2px;
+            padding: 0; 
+            span {
+                min-width: 135px; //prevents from squeezing when spans get bigger e.g. 90-100
+                text-align: center;
+                margin: 0;
+            }
+
+            .attributeStat {
+                justify-content: space-evenly;               
+                span {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 930px) {
+    .stats {
+        .statsBlock {
+            margin: 2px;
+            padding: 0;
+            
+            .attributeStat {
+                    padding: 2px;
+                    margin: 2px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+
+    .stats {
+        .statsBlock {
+            .attributeStat{
+                span{
+                    min-width: 90px;
+                    margin: 10px;
+                }
+            }
+            span {
+                font-size: 0.8em;
+            }
+        }
+    }
+
+    .attributeImg {
+        width: 25px;
+        margin: 2px 0;
+    }
+    
+    .activeAttribute {
+        width: 30px;
+    }
+    
+}
