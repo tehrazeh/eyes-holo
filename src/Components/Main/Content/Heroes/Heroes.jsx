@@ -26,7 +26,7 @@ const Heroes = () => {
   }, [dispatch, status])
 
   if (status === 'loading') { // waiting for a response, or page was refreshed
-    return <>Zagruzka...😎</>
+    return <>Loading...</>
   }
   return (
     <div className={styles.heroBlocks}>

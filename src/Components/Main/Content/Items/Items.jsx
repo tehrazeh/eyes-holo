@@ -21,7 +21,7 @@ const Items = () => {
   }, [dispatch, status])
 
   if (status === 'loading') {
-    return <>Zagruzka...😎</>
+    return <>Loading...</>
   }
   return (
     <div>
