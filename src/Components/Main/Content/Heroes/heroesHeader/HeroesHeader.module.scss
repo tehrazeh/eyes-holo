@@ -2,7 +2,7 @@
     width: 95%;
     line-height: 0px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     &_inputContainer{
         position: relative;
@@ -46,6 +46,7 @@
     }
 
     &_rolesContainer {
+        margin: 0 25px;
         border: 1px solid rgb(134, 136, 158);
         border-radius: 5px;
         padding: 2px;
@@ -59,7 +60,13 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 650px) {
+
+    .header{
+        justify-content: flex-start;
+    }
+}
+@media screen and (max-width: 500px) {
 
     .header{
         flex-direction: column;

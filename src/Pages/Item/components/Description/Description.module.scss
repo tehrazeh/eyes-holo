@@ -1,7 +1,7 @@
 .descriptionContainer {
     background-color: rgb(9, 12, 20);
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -17,11 +17,14 @@
         line-height: 1.8em;
         border-radius: 5px;
         width: 100%;
-        padding: 10px;
-        margin: 5px;
+        padding: 5px 0;
     }
 
     .descriptionBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         & > :first-child {
             display: flex;
             justify-content: flex-start;
@@ -34,6 +37,14 @@
         }
 
         &_attributes {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2px;
+            width: 100%;
             background-color: rgb(31, 31, 55);
         }
     }
@@ -44,9 +55,16 @@
         &_image {
             width: 30px;
         }
-        p, span {
-            margin-left: 8px;
-        }
+    }
+}
 
+
+@media screen and (max-width: 400px) {
+    .descriptionContainer {   
+        .descriptionBlock {    
+            &_attributes {
+                font-size: 0.7em;
+            }
+        }
     }
 }

@@ -79,3 +79,12 @@
         background-color: #181f3d;
     }
 }
+
+@media screen and (max-width: 300px) {
+    .role {
+        &_tooltip {
+            padding: 5px;
+            width: 400%;
+        }
+    }
+}

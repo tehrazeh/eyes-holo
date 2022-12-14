@@ -37,7 +37,7 @@ const Item = () => {
           <b>{`> ${itemStats.dname}`}</b>
         </p>
       </div>
-    <div className={styles.itemContainer}>   
+    <div className={styles.itemContainer}> 
       <Profile itemStats={itemStats}/>
       <Description itemStats={itemStats}/>
       <Parts item={item} />

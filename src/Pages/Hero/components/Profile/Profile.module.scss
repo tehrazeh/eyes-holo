@@ -25,7 +25,6 @@
     }
     img {
         border-radius: 5px;
-        // height: 150px;
     }
 
     .attackType {
@@ -100,4 +99,11 @@
         align-items: center;
     }    
     
+}
+@media screen and (max-width: 350px) {
+    .profile {
+        img {
+            width: 80%;
+        }
+    }      
 }

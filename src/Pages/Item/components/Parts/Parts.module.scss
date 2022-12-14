@@ -11,7 +11,7 @@
 
     &_items {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
         padding: 10px;
         flex-wrap: wrap;
@@ -54,4 +54,26 @@
         margin-right: 5px;
     }
 
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        padding: 5px;    
+        &_items {
+            padding: 5px;
+    
+            & > * {
+                background-color: rgb(31, 31, 55);
+                padding: 5px;
+                border-radius: 5px;
+                margin: 5px;
+                .componentImage {
+                    width: 70px;
+                }
+            }
+            .recipeImage {
+                width: 70px;
+            }
+        }
+    }
 }

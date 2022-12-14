@@ -45,7 +45,7 @@ export const Parts = (props) => {
             <img  className = {styles.costImage} src = {costImage} alt ='cost'/>
             <p>{itemRecipe.cost}</p>
           </div>
-        <img src={link + itemRecipe.img} alt='recipe'></img>
+        <img className={styles.recipeImage} src={link + itemRecipe.img} alt='recipe'></img>
         </div>}
       </div> 
   </div>

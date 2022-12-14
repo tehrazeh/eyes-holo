@@ -5,7 +5,8 @@ const Profile = ({ itemStats }) => {
     return (
         <div className={styles.itemProfile}>
             <div className={styles.itemProfile_top}>
-                <img src={link + itemStats.img} alt='hero icon' />
+                <img className={styles.itemImage}
+                src={link + itemStats.img} alt='item icon' />
                 <div className={styles.itemProfile_top_stats}>
                     <p>{itemStats.dname}</p>
                     { itemStats.cost > 0 &&

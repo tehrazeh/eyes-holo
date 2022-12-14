@@ -20,7 +20,7 @@ const LevelScroll = ({hero}) => {
     <input className={styles.range_scroll} type='range'
      min={1} max={30} step={1} value={currentLvl}
      onChange={(e) => dispatch(setHeroLvl(e.target.valueAsNumber))}/>
-    <span>Level {currentLvl}</span>
+    <div className={styles.level}>Level {currentLvl}</div>
   </div>
   )
 }

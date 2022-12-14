@@ -125,10 +125,15 @@
         width: 100%;
     }
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 400px) {
     .abilities{
         .abilityBlock {
             &_top {
+                &_image {
+                    img {
+                        width: 100px;
+                    }
+                }
                 &_stats, &_dmg {
                     p, span {
                         font-size: 0.8em;

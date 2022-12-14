@@ -1,10 +1,11 @@
 .itemProfile {
     background-color: rgb(9, 12, 20);
     border-radius: 5px;
+    width: 100%;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     &_top {
         width: 100%;
@@ -16,17 +17,16 @@
         padding: 20px;
         font-weight: 350;
         font-size: 1.2em;
-        height: 48%;
-
+        .itemImage {
+            width: 160px;
+            border-radius: 5px;
+        }
         p {
             font-weight: 400;
             font-size: 1.4;
             margin: 10px;
         }
-        img {
-            width: 120px;
-            border-radius: 5px;
-        }
+
 
         &_stats {
             padding: 10px;
@@ -45,7 +45,7 @@
         justify-content: center;
         & > :first-child, > :last-child {
             display: flex;
-            margin: 10px;
+            margin: 3px;
             align-items: center;
         }
 
@@ -95,7 +95,6 @@
     }
 
     .lore {
-        height: 48%;
         width: 100%;
         margin-top: 10px;
         border-radius: 5px;
@@ -104,7 +103,7 @@
         flex-direction: column;
         justify-content: flex-start;
         background-color: rgb(31, 31, 55);
-        padding: 20px;
+        padding: 5px;
         font-weight: 200;
         font-size: 1.2em;
         color: rgb(190, 193, 221);
@@ -126,3 +125,13 @@
     }
 }
 
+@media screen and (max-width: 500px) {
+    .itemProfile {
+        &_top {
+            flex-direction: column;
+        }
+        .lore {
+            font-size: 1em;
+        }
+    }
+}

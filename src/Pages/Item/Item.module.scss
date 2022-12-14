@@ -24,13 +24,32 @@
 
 .itemContainer {
     display: flex;
-    width: 90%;
+    width: 96%;
     justify-content: space-evenly;
     margin: 0 auto;
     flex-wrap: wrap;
 
     & > * {
         margin: 10px;
-        width: 48%;
+        width: 90%;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .itemContainer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        & > * {
+            width: 95%;
+            margin: 10px 0;
+        }
+    }
+
+    .header {
+        p, a, b {
+            font-size: 0.95em;
+        }
     }
 }

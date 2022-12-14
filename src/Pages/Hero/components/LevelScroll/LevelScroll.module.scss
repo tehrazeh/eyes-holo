@@ -20,5 +20,19 @@
     span {
         width: 60px;
     }
+
+    .level {
+        width: 60px;
+    }
     
+}
+
+
+@media screen and (max-width: 400px) {
+    .range {
+        font-size: 0.8em;
+        .level {
+            width: 40px;
+        }
+    }
 }
