@@ -5,7 +5,7 @@ const Main = () => {
         <div className={styles.homeContainer}>
             <p>Welcome to <b>eyes holo</b></p>
         <p>Discover new details about Dota 2 heroes and items</p>
-        <img src={process.env.PUBLIC_URL + '/logo.png'}/>
+        <img src={process.env.PUBLIC_URL + '/logo.png'} alt='logo'/>
         <div className={styles.buttons}>    
             <Link to='/Heroes'>
             <button className={styles.pulse}>Heroes</button>

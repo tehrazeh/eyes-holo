@@ -14,7 +14,7 @@ const QualityBlocks = (props) => {
   // use reduce instead of map to end up having empty array if filter input
   // does not satisfy any elements. then check for length and not render if empty
   const itemElements = items.reduce((acc, item) => {
-    if (item.dname.toLowerCase().includes(searchValue.toLowerCase())) { // active for debounce
+    if (item.dname.toLowerCase().includes(activeSearchValue.toLowerCase())) { // active for debounce
       acc.push(
       <div key={item.id} className={styles.element}>
         <Link to={'/Items/' + item.id} key={item.id}>

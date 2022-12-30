@@ -17,7 +17,7 @@ const Lore = (props) => {
     } else {
       setVisibility(true)
     }
-  }, [])
+  }, [width])
   if (!lore) return <div>Loading...</div>
   return (
     <div className={styles.lore}>

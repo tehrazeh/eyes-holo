@@ -6,7 +6,7 @@ const Header = () => {
         <div className={styles.Header}>
         <div className={styles.logo}>
             <NavLink to='/'>
-            <img src={process.env.PUBLIC_URL + '/logo.png'}/>
+            <img src={process.env.PUBLIC_URL + '/logo.png'} alt='logo'/>
             </NavLink>
         </div>
         <div className={styles.buttons}>    
