@@ -9,7 +9,7 @@ export const useHeroLore = (heroName) => {
         setLore(data[heroName.slice(14)])
         }
         fetchLore()
-    }, [lore])
+    }, [lore, heroName])
 
     return lore
 }
