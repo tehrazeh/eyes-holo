@@ -10,6 +10,33 @@
     margin: auto;
     overflow: hidden;
     color: rgb(190, 193, 221);
+    &_error {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            margin: 5px;
+            z-index: 2;
+            font-size: 1em;
+            width: max-content;
+            border-radius: 5px;
+            background: none;
+            padding: 5px;
+            border: none;
+            a {
+                text-decoration: none;
+                color: rgb(190, 193, 221);
+            }
+        }
+    
+        button:hover {
+            background-color: rgb(31, 31, 55);
+            filter:brightness(1.2);
+            cursor: pointer;
+        }
+    }
     img {
         width: 300px;
         height: 300px;

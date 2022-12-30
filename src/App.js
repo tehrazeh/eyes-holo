@@ -9,34 +9,37 @@ import Item from './Pages/Item/Item'
 import { Routes, Route } from 'react-router-dom';
 import Roles from './Pages/Roles/Roles';
 import { NotFound } from './Pages/NotFound/NotFound';
-import { withErrorBoundary } from 'react-error-boundary'
+import { ErrorBoundary } from 'react-error-boundary'
 function App() {
   return (
     <div className="App">
       <Header />
       <div className='Main'>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/Heroes" element={<Heroes />} />
-          <Route path="/Items" element={<Items />} />
-          <Route path="/Heroes/:id" element={<Hero />} />
-          <Route path="/Items/:id" element={<Item />} />
-          <Route path="/Roles" element={<Roles />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <ErrorBoundary FallbackComponent={NotFound}>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/Heroes" element={<Heroes />} />
+            <Route path="/Items" element={<Items />} />
+            <Route path="/Heroes/:id" element={<Hero />} />
+            <Route path="/Items/:id" element={<Item />} />
+            <Route path="/Roles" element={<Roles />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ErrorBoundary>
       </div>
       <Footer />
     </div>
   );
 }
 
-export default withErrorBoundary(App, {
-  fallback: 
-  <div className="App">
-    <Header />
-    <div className='Main'>
-      <NotFound />
-    </div>
-    <Footer />
-  </div>
-});
+export default App
+// export default withErrorBoundary(App, {
+//   fallback: 
+//   <div className="App">
+//     <Header />
+//     <div className='Main'>
+//       <NotFound />
+//     </div>
+//     <Footer />
+//   </div>
+// });
